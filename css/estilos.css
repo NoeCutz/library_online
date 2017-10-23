@@ -111,12 +111,51 @@ section #presentacion{
 }
 
 section #ofertas{
-    margin:20px 30px 40px 30px;
+    width: 930px;
+    height: 150px;
+    border: 1px solid #993d00;
+    margin:20px;
+    padding-bottom: 10px;
+    text-align: center;
 }
 
 section #presentacion video{
     width: 600px;
-    height: 400px;
+    height: 300px;
+}
+
+section #ofertas ul{
+    margin-top: 10px;
+    list-style: none;
+}
+
+section #ofertas ul li{
+    width: 250px;
+    float: left;
+    padding:0 0 0 5px;
+}
+
+#ofertas ul li img{
+    float: left;
+    width:120px;
+    height: 100px;
+}
+
+#ofertas ul li #title_oferta{
+    font-weight: bold;
+    width: 50px;
+    float: left;
+}
+
+#ofertas ul li #valoracion{
+    width: 50px;
+    float: left;
+}
+
+#ofertas ul li #precio{
+    font-size: 12pt;
+    width: 85px;
+    float: left;
 }
 
 /*=====================================
