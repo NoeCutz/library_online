@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header, nav, section, aside, footer{
+    display: block;
+}
+
+.clear{
+    clear:both;
+}
+
+body{
+    margin:30px auto 0;
+    position:relative;
+    text-align:left;
+    width:960px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#contenedor{
+    width: 960px;
+}
+
+/*=====================================
+	Manejo del header
+=======================================*/
+
+header{
+    width: 960px;
+    height: 50px;
+    border-bottom: 2px solid #000000;
+}
+
+
+#logotipo{
+    position: absolute;
+    left: 35px;
+    margin:0;
+}
+
+#logotipo img{
+    float: left;
+    width: 100px;
+    height: 50px;
+}
+
+
+#logotipo span{
+    margin: 10px 0 0 10px;
+    float: left;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav ul{
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0 10px;
+    float: left;
+}
+
+
+header #usuario{
+    position: absolute;
+    float: left;
+    top: 20px;
+    right: 40px;
+}
+
+
+
+
+
+/*=====================================
+	Manejo del footer
+=======================================*/
+
+footer{
+    border-top: 2px solid #000000;
+    clear: both;
+    text-align: left;
+}
+
+
+#social{
+    width: 960px;
+    margin:5px;
+}
+
+#social ul{
+    padding:0;
+    list-style:none;
+}
+
+#social ul li {
+    float: left;
+    padding:0 0 0 5px;
+}
+
+#derechos{
+    float: left;
+    width: 960px;
+    margin: 0 30px 0 0;
+    padding: 0 30px 0 0;
+}
