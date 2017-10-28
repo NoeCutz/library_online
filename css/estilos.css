@@ -1,0 +1,14 @@
+div.stars{
+    align-content: center;
+}
+
+button.star {
+    width: 40px;
+    height: 40px;
+    color: black;
+
+    border: 0px;
+    background-size: cover;
+    background-color: transparent;
+    border-color: deepskyblue
+}
