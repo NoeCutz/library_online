@@ -1,14 +1,82 @@
-div.stars{
-    align-content: center;
+#lateral { float: left; width: 17%; }
+
+
+#main {
+    width: 100%;
+    max-width: 1000px;
+    width: expression(document.body.clientWidth > 1001? "1000px": "auto");
+    margin: 0 auto;
 }
 
-button.star {
-    width: 40px;
-    height: 40px;
-    color: black;
+#portada{
+    padding:10px;
+}
+#contenido { float: right; width: 78%; }
+#contenido #texto { float: left; width: 78%; }
+#contenido #banner { float: right; width: 17%; }
 
-    border: 0px;
-    background-size: cover;
-    background-color: transparent;
-    border-color: deepskyblue
+div.stars {
+    padding: 7px;
+    width: 270px;
+    display: inline-block;
+    align-content: left;
+}
+
+input.star { display: none; }
+
+label.star {
+    align-content: right;
+    font-size: 40px;
+    color: #444;
+    transition: all .2s;
+}
+div.bookart{
+    float: right;
+}
+
+input.star:checked + label.star:before {
+    content: '☆';
+    color: cornflowerblue;
+    transition: all .25s;
+}
+
+input.star-5:checked + label.star:before {
+    color: #ffe513;
+    text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked + label.star:before { color: #F62; }
+
+label.star:before {
+    content:  '☆';
+}
+
+#detalle{
+    horiz-align: center;
+    align-content: center;
+}
+#isbn{
+}
+
+td{
+    border: ridge;
+    border-width: 2px;
+}
+
+#payment{
+    font-size: large;
+    font-weight: bold;
+    font-family: "Verdana";
+}
+
+#Precio{
+    color: red;
+}
+
+#cart-button{
+    font-size: larger;
+    background-color: black;
+
+    color: white;
+    padding: 0px 25px 0px 25px;
 }

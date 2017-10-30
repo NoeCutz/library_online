@@ -10,17 +10,55 @@
     <div id="cabecera">Cabecera</div>
     <div id="lateral">
         <div id="bookart">
-            <img id="portada" height="25%" width="17%" src="img/lifeofpi.jpg">
-            <div id="stars">
-                <button class="star" id="star1" type="button">
-                    <img src="img/star.png" width="40px" height="40px" >
-                </button>
-                <input class="star" id="star2" type="button">
-                <input class="star" id="star3" type="button">
-                <input class="star" id="star4" type="button">
-                <input class="star" id="star5" type="button">
-            </div>
+            <img id="portada" width="100%" height="100%" src="img/lifeofpi.jpg">
+         </div>
+        <div class="stars">
+            <form action="">
+                <input class="star star-1" id="star-5" type="radio" name="star"/>
+                <label class="star star-1" for="star-5"></label>
+                <input class="star star-2" id="star-4" type="radio" name="star"/>
+                <label class="star star-2" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" name="star"/>
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-4" id="star-2" type="radio" name="star"/>
+                <label class="star star-4" for="star-2"></label>
+                <input class="star star-5" id="star-1" type="radio" name="star"/>
+                <label class="star star-5" for="star-1"></label>
+            </form>
+        </div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque nisi in massa ornare, at dapibus nisl mattis. Sed nec maximus leo, eget ultricies libero. Aliquam accumsan blandit augue, eu auctor massa. Nunc ut mi ut ante sodales cursus. Integer maximus cursus purus, ut rutrum ex viverra mattis. Curabitur mattis sapien in tortor commodo imperdiet. Sed posuere tellus eu purus vulputate ultricies. Praesent tristique venenatis libero, ac facilisis leo porta a. Integer a dolor nec diam interdum interdum. Praesent scelerisque malesuada neque ut dapibus. Nunc ultricies eros sed risus ornare venenatis. Morbi id enim sed sem dictum elementum. Proin quis bibendum metus. Sed fringilla lacinia arcu sed euismod.
+        </p>
     </div>
+    <div id="contenido">
+        <div id="texto">
+            <h1>Life of Pi</h1>
+            <p id="resumen">The son of a zookeeper, Pi Patel has an encyclopedic knowledge of animal behavior and a fervent love of stories. When Pi is sixteen, his family emigrates from India to North America aboard a Japanese cargo ship, along with their zoo animals bound for new homes.
+                The ship sinks. Pi finds himself alone in a lifeboat, his only companions a hyena, an orangutan, a wounded zebra, and Richard Parker, a 450-pound Bengal tiger. Soon the tiger has dispatched all but Pi, whose fear, knowledge, and cunning allow him to coexist with Richard Parker for 227 days while lost at sea. When they finally reach the coast of Mexico, Richard Parker flees to the jungle, never to be seen again. The Japanese authorities who interrogate Pi refuse to believe his story and press him to tell them "the truth." After hours of coercion, Pi tells a second story, a story much less fantastical, much more conventional--but is it more true?</p>
+            <div id="detalle">
+                <div id="payment" align="center">
+                    <span>
+                        <b>Price: </b>
+                    </span>
+                    <span id="Precio">
+                        $369.00
+                    </span>
+                    <input type="button" id="cart-button" value="Add to Cart">
+                </div>
+                <h1>Description</h1>
+                <table id="isbn" align="center" title="Description">
+                    <tr><td>Name: </td><td>Life of Pi</td></tr>
+                    <tr><td>ISBN: </td><td>0156027321</td></tr>
+                    <tr><td>Editorial: </td><td>VINTAGE BOOKS</td></tr>
+                    <tr><td>Genre: </td><td>N/A</td></tr>
+                    <tr><td>Author: </td><td>YANN MARTEL</td></tr>
+                    <tr><td>Year: </td><td>2011</td></tr>
+                </table>
+            </div>
+        </div>
+        <div id="banner" align="right">
+            <img id="ad"  src="img/bookcover.jpg">
+        </div>
     </div>
 </div>
 </body>
