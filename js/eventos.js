@@ -17,6 +17,7 @@ function User(user, password, name, email, telephone, login) {
 window.onload = function () {
     loadUsers();
     eventProfile();
+    init();
 
     function eventProfile() {
         var perfil = document.getElementById("usuario");
@@ -28,6 +29,15 @@ window.onload = function () {
             }
 
         }
+    }
+
+    function init() {
+        content = document.getElementById("nombre_usuario");
+
+        if(sessionStorage.username){
+            content.innerHTML = sessionStorage.username;
+        }
+
     }
 };
 
@@ -69,7 +79,6 @@ function login(form){
                 return true;
             }else{
                 content_valid.innerHTML = "Contraseña incorrecta";
-                content_valid.style.color = "red";
                 return false
             }
         }
@@ -84,6 +93,22 @@ function login(form){
 
 function logout() {
     sessionStorage.removeItem("username");
+}
+
+
+function signup(form) {
+    var contrasena = form["contrasena"].value;
+    var contrasena_repeat = form["contrasena_repeat"].value;
+    var content_valid = document.getElementById("validacion_login");
+
+    if(contrasena == contrasena_repeat){
+        return true;
+    }else{
+        contrasena.value = "";
+        contrasena_repeat.value = "";
+        content_valid.innerHTML = "Contraseñas no coinciden";
+        return false
+    }
 }
 
 

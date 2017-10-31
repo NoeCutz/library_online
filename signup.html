@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ingresar</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="css/estilos.css" type="text/css" media="screen">
     <script type="application/javascript" src="js/eventos.js"></script>
 </head>
@@ -31,10 +31,10 @@
     </header>
 
     <section id="content_login">
-        <div id="login">
-            <h2>Ingresar</h2>
-            <p>Ingresa para iniciar a navegar a través de las historias</p>
-            <form id="form_login" method="post" action="index.html" onsubmit="return login(this);">
+        <div id="signup">
+            <h2>Registro</h2>
+            <p>Registrate para iniciar a navegar a través de las historias</p>
+            <form id="form_signup" method="post" action="" onsubmit="return signup(this);">
                 <table>
                     <tr>
                         <td colspan="2" id="validacion_login"></td>
@@ -51,18 +51,39 @@
                     </tr>
 
                     <tr>
+                        <td>Vuelva a escribir la contraseña:</td>
+                        <td><input name="contrasena_repeat" id="contrasena_repeat" type="password" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nombre:
+                        </td>
+                        <td><input name="name" id="name" type="text" required="required"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Correo electrónico:
+                        </td>
+                        <td><input name="email" id="email" type="email" required="required"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Telefono:
+                        </td>
+                        <td><input name="telephone" id="telephone" type="tel" required="required" pattern="[0-9]{10}"></td>
+                    </tr>
+
+                    <tr>
                         <td colspan="2">
-                            <input id="button_login" type="submit" value="Ingresar">
+                            <input id="button_signup" type="submit" value="Registrar">
                         </td>
                     </tr>
 
                 </table>
 
             </form>
-            <div id="login_registrarse">
-                <a href="signup.html">Registrate</a>
-
-            </div>
         </div>
 
     </section>

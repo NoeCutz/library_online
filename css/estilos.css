@@ -89,7 +89,7 @@ header #perfil{
     width: 70px;
     position: absolute;
     float: left;
-    top: 10px;
+    top: 5px;
     right: 40px;
 }
 
@@ -98,8 +98,13 @@ header #perfil #usuario{
     height: 40px;
 }
 
+header #perfil #nombre_usuario{
+    width: 50px;
+    height: 15px;
+    color: white;
+}
+
 header #perfil #carrito{
-    margin-top: 5px;
     width: 50px;
     height: 40px;
 }
@@ -176,25 +181,28 @@ section #ofertas ul li{
 
 
 
-#form_login input{
+#form_login input, #form_signup input{
     margin: 10px auto;
     width: 200px;
-    height: 20px;
+    height: 30px;
     border-style:solid;
 
 }
 
-
-
-
-#form_login input:focus{
+#form_login input:focus, #form_signup input:focus{
     border-color: cornflowerblue;
 }
 
-#form_login #button_login{
-    width: 150px;
-    height: 30px;
+#button_login{
+    width: 10px;
+    height: 100px;
     padding: 5px;
+    font-weight: bold;
+}
+
+#button_signup{
+    width: 150px;
+    height: 100px;
     font-weight: bold;
 }
 
@@ -212,7 +220,15 @@ section #ofertas ul li{
 
 #validacion_login{
     height: 30px;
+    color: red;
 }
+
+#signup{
+    width: 500px;
+    height: 500px;
+    margin:0 230px;
+}
+
 
 /*=====================================
 	Manejo del footer
