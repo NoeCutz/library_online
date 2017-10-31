@@ -1,8 +1,11 @@
 /**
  * Created by noecutz on 17/10/17.
  */
-var users ;
- 
+
+var jsonUsers = {};
+
+jsonUsers.users = [];
+
 function User(user, password, name, email, telephone, login) {
     this.user = user;
     this.password = password;
@@ -32,6 +35,7 @@ window.onload = function () {
     }
 
     function init() {
+
         content = document.getElementById("nombre_usuario");
 
         if(sessionStorage.username){
@@ -39,26 +43,15 @@ window.onload = function () {
         }
 
     }
-};
 
-
-
-
-
-function loadUsers() {
-    var xmlhttp = new XMLHttpRequest(),
-        url="";
-    url ="bd/users.json";
-
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            users = JSON.parse(xmlhttp.responseText);
+    function loadUsers() {
+        if(localStorage.users){
+            jsonUsers = JSON.parse(localStorage.getItem("users"));
+            console.log(jsonUsers);
         }
-    };
+    }
 
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-}
+};
 
 
 function login(form){
@@ -68,14 +61,16 @@ function login(form){
     var password = form["contrasena"].value;
     var content_valid = document.getElementById("validacion_login");
 
-    loadUsers();
+    console.log(user);
 
-
-    for (i=0; i<users.length;i++){
-        if(users[i].user == user){
-            if(users[i].password == password){
+    for (i=0; i<jsonUsers.users.length;i++){
+        console.log(jsonUsers.users[i].user);
+        if(jsonUsers.users[i].user == user){
+            if(jsonUsers.users[i].password == password){
                 //userLogin = new User(users[i].user, users[i].password, users[i].name, users[i].email, users[i].telephone, true);
-                sessionStorage.setItem("username", users[i].user);
+               console.log("contraseña iguales");
+
+                sessionStorage.setItem("username", jsonUsers.users[i].user);
                 return true;
             }else{
                 content_valid.innerHTML = "Contraseña incorrecta";
@@ -102,6 +97,7 @@ function signup(form) {
     var content_valid = document.getElementById("validacion_login");
 
     if(contrasena == contrasena_repeat){
+        saveUser(form);
         return true;
     }else{
         contrasena.value = "";
@@ -109,6 +105,17 @@ function signup(form) {
         content_valid.innerHTML = "Contraseñas no coinciden";
         return false
     }
+}
+
+
+function saveUser(form) {
+    var json = { "user" : form["usuario_input"].value , "password": form["contrasena"].value
+         , "name": form["name"].value, "email": form["email"].value , "telephone": form["telephone"].value };
+
+    jsonUsers.users.push(json);
+
+    localStorage.setItem("users", JSON.stringify(jsonUsers));
+
 }
 
 
