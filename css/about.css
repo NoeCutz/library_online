@@ -25,6 +25,10 @@ body{
     padding-right: 20px;
 }
 
+#contenedor{
+    width: 960px;
+}
+
 /*=====================================
 	Manejo del header
 =======================================*/
@@ -67,7 +71,7 @@ nav ul{
     text-align: right;
     position: absolute;
     margin: 0 15px 0 0;
-    list-style: none;
+    list-style: none outside none;
     top: 40px;
     right: 150px;
 }
@@ -80,12 +84,16 @@ nav ul li{
     float: left;
 }
 
+li a{
+    color: #ffffff;
+    text-decoration: none;
+}
 
 header #perfil{
     width: 70px;
     position: absolute;
     float: left;
-    top: 10px;
+    top: 5px;
     right: 40px;
 }
 
@@ -94,8 +102,13 @@ header #perfil #usuario{
     height: 40px;
 }
 
+header #perfil #nombre_usuario{
+    width: 50px;
+    height: 15px;
+    color: white;
+}
+
 header #perfil #carrito{
-    margin-top: 5px;
     width: 50px;
     height: 40px;
 }
@@ -132,9 +145,7 @@ footer{
     color: #ffffff;
     text-align: left;
     font-size: 14pt;
-    margin-top: 15px;
 }
-
 
 #social{
     width: 960px;

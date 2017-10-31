@@ -25,6 +25,8 @@ body{
     padding-right: 20px;
 }
 
+
+
 /*=====================================
 	Manejo del header
 =======================================*/
@@ -67,7 +69,7 @@ nav ul{
     text-align: right;
     position: absolute;
     margin: 0 15px 0 0;
-    list-style: none;
+    list-style: none outside none;
     top: 40px;
     right: 150px;
 }
@@ -80,12 +82,16 @@ nav ul li{
     float: left;
 }
 
+li a{
+    color: #ffffff;
+    text-decoration: none;
+}
 
 header #perfil{
     width: 70px;
     position: absolute;
     float: left;
-    top: 10px;
+    top: 5px;
     right: 40px;
 }
 
@@ -94,8 +100,13 @@ header #perfil #usuario{
     height: 40px;
 }
 
+header #perfil #nombre_usuario{
+    width: 50px;
+    height: 15px;
+    color: white;
+}
+
 header #perfil #carrito{
-    margin-top: 5px;
     width: 50px;
     height: 40px;
 }
@@ -104,7 +115,69 @@ header #perfil #carrito{
 	Manejo del contenido
 =======================================*/
 
+#contenedor{
+    width: 960px;
+    margin: 15px 15px 15px 75px;
+    font-family: Ebrima, serif;
+}
 
+.shopping_cart{
+    margin-top: 15px;
+}
+
+table{
+    width: 50%;
+
+}
+
+th, td{
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th{
+    color: white;
+    background-color: #ff944d;
+    padding: 0 10px 0 10px;
+}
+
+td{
+    padding: 2px;
+}
+
+tr:hover{
+    background-color: #f5f5f5
+}
+
+tr:nth-child(even){
+background-color: #f2f2f2
+}
+
+#contenedor p{
+    margin: 15px;
+}
+
+#cost_total{
+    color: #c00e14;
+}
+
+#cart_actions{
+    list-style-type: none;
+    margin: 15px;
+}
+
+#cart_actions a{
+    color: #192666;
+    padding: 15px;
+}
+
+#cart_actions a:hover{
+    color: #4F6AD7;
+}
+
+#cart_actions .btn{
+    padding: 0;
+}
 
 /*=====================================
 	Manejo del footer
@@ -118,9 +191,7 @@ footer{
     color: #ffffff;
     text-align: left;
     font-size: 14pt;
-    margin-top: 15px;
 }
-
 
 #social{
     width: 960px;
