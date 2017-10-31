@@ -1,0 +1,216 @@
+/*
+   Manejo general
+ */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header, nav, section, aside, footer{
+    display: block;
+}
+
+.clear{
+    clear:both;
+}
+
+body{
+    margin:30px auto 0;
+    position:relative;
+    text-align:left;
+    width:960px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+/*=====================================
+	Manejo del header
+=======================================*/
+
+header{
+    background-color: #ff8533;
+    width: 960px;
+    height:100px;
+    color: #ffffff;
+    border-bottom: 2px solid #993d00;
+}
+
+
+#logotipo{
+    position: relative;
+    margin:0;
+}
+
+#logotipo img{
+    float: left;
+    padding: 15px 0 0 15px;
+    width: 300px;
+    height: 57px;
+}
+
+
+#logotipo span{
+    margin: 40px 0 0 10px;
+    float: left;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav{
+    font-size: 14pt;
+}
+
+nav ul{
+    text-align: right;
+    position: absolute;
+    margin: 0 15px 0 0;
+    list-style: none outside none;
+    top: 40px;
+    right: 150px;
+}
+
+nav ul li{
+    text-align: center;
+    border-right: 1px solid;
+    margin: 0 10px;
+    padding: 0 10px;
+    float: left;
+}
+
+li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header #perfil{
+    width: 70px;
+    position: absolute;
+    float: left;
+    top: 5px;
+    right: 40px;
+}
+
+header #perfil #usuario{
+    width: 50px;
+    height: 40px;
+}
+
+header #perfil #nombre_usuario{
+    width: 50px;
+    height: 15px;
+    color: white;
+}
+
+header #perfil #carrito{
+    width: 50px;
+    height: 40px;
+}
+
+/*=====================================
+	Manejo del contenido
+=======================================*/
+
+#contenedor{
+    width: 960px;
+    margin: 15px 15px 15px 75px;
+    font-family: Ebrima, serif;
+}
+
+.shopping_cart{
+    margin-top: 15px;
+}
+
+table{
+    width: 50%;
+
+}
+
+th, td{
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th{
+    color: white;
+    background-color: #ff944d;
+    padding: 0 10px 0 10px;
+}
+
+td{
+    padding: 2px;
+}
+
+tr:hover{
+    background-color: #f5f5f5
+}
+
+tr:nth-child(even){
+background-color: #f2f2f2
+}
+
+#contenedor p{
+    margin: 15px;
+}
+
+#cost_total{
+    color: #c00e14;
+}
+
+#cart_actions{
+    list-style-type: none;
+    margin: 15px;
+}
+
+#cart_actions a{
+    color: #192666;
+    padding: 15px;
+}
+
+#cart_actions a:hover{
+    color: #4F6AD7;
+}
+
+#cart_actions .btn{
+    padding: 0;
+}
+
+/*=====================================
+	Manejo del footer
+=======================================*/
+
+footer{
+    width: 960px;
+    height: 60px;
+    background-color: #ff944d;
+    border-top: 2px solid #993d00;
+    color: #ffffff;
+    text-align: left;
+    font-size: 14pt;
+}
+
+#social{
+    width: 960px;
+    margin:5px;
+}
+
+#social ul{
+    padding:0;
+    list-style:none;
+}
+
+#social ul li {
+    float: left;
+    padding:0 0 0 5px;
+}
+
+#derechos{
+    float: left;
+    width: 960px;
+    margin: 0 30px 0 10px;
+    padding: 0 30px 0 0;
+}
