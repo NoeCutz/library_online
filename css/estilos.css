@@ -1,87 +1,3 @@
-<<<<<<< HEAD
-#lateral { float: left; width: 17%; }
-
-
-#main {
-    width: 100%;
-    max-width: 1000px;
-    width: expression(document.body.clientWidth > 1001? "1000px": "auto");
-    margin: 0 auto;
-}
-
-#portada{
-    padding:10px;
-}
-#contenido { float: right; width: 78%; }
-#contenido #texto { float: left; width: 78%; }
-#contenido #banner { float: right; width: 17%; }
-
-div.stars {
-    padding: 7px;
-    width: 270px;
-    display: inline-block;
-    align-content: left;
-}
-
-input.star { display: none; }
-
-label.star {
-    align-content: right;
-    font-size: 40px;
-    color: #444;
-    transition: all .2s;
-}
-div.bookart{
-    float: right;
-}
-
-input.star:checked + label.star:before {
-    content: '☆';
-    color: cornflowerblue;
-    transition: all .25s;
-}
-
-input.star-5:checked + label.star:before {
-    color: #ffe513;
-    text-shadow: 0 0 20px #952;
-}
-
-input.star-1:checked + label.star:before { color: #F62; }
-
-label.star:before {
-    content:  '☆';
-}
-
-#detalle{
-    horiz-align: center;
-    align-content: center;
-}
-#isbn{
-}
-
-td{
-    border: ridge;
-    border-width: 2px;
-}
-
-#payment{
-    font-size: large;
-    font-weight: bold;
-    font-family: "Verdana";
-}
-
-#Precio{
-    color: red;
-}
-
-#cart-button{
-    font-size: larger;
-    background-color: black;
-
-    color: white;
-    padding: 0px 25px 0px 25px;
-}
-=======
 *{
     margin: 0;
     padding: 0;
@@ -316,9 +232,89 @@ section #ofertas ul li{
 }
 
 
+#prod-lateral { float: left; width: 17%; }
+
+
+
+#prod-portada{
+    padding:10px;
+}
+#prod-contenido { float: right; width: 78%; }
+#prod-contenido #texto { float: left; width: 75%; }
+#prod-contenido #banner { float: right; width: 25%; }
+
+div.prod-stars {
+    padding: 7px;
+    width: 270px;
+    display: inline-block;
+    align-content: left;
+}
+
+input.prod-star { display: none; }
+
+label.prod-star {
+    align-content: right;
+    font-size: 40px;
+    color: #444;
+    transition: all .2s;
+}
+div.prod-bookart{
+    float: right;
+}
+
+input.prod-star:checked + label.prod-star:before {
+    content: '☆';
+    color: cornflowerblue;
+    transition: all .25s;
+}
+
+input.prod-star-5:checked + label.prod-star:before {
+    color: #ffe513;
+    text-shadow: 0 0 20px #952;
+}
+
+input.prod-star-1:checked + label.prod-star:before { color: #F62; }
+
+label.prod-star:before {
+    content:  '☆';
+}
+
+#prod-detalle{
+    horiz-align: center;
+    align-content: center;
+}
+
+#isbn{
+padding-left: 150px;
+}
+#isbn td{
+    border: ridge;
+    border-width: 2px;
+}
+
+#prod-payment{
+    font-size: large;
+    font-weight: bold;
+    font-family: "Verdana";
+}
+
+#prod-precio{
+    color: red;
+}
+
+#prod-cart-button{
+    font-size: larger;
+    background-color: black;
+
+    color: white;
+    padding: 0px 25px 0px 25px;
+}
+
+
 /*=====================================
 	Manejo del footer
 =======================================*/
+#pie { clear: both; }
 
 footer{
     width: 960px;
@@ -353,5 +349,3 @@ footer{
     padding: 0 30px 0 0;
 }
 
-
->>>>>>> db3fe627518a6bc7cc00eeeb62cd1740620ad3da
