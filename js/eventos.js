@@ -26,7 +26,8 @@ window.onload = function () {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
             if (sessionStorage.username) {
-                location.href = "perfil.html"
+                logout();
+                location.href = "index.html"
             } else {
                 location.href = "login.html"
             }
@@ -77,17 +78,23 @@ function login(form){
                 return false
             }
         }
-        content_valid.innerHTML = "Usuario y contraseña incorrectos";
-        content_valid.style.color = "red";
-        return false;
-    }
 
+    }
+    content_valid.innerHTML = "Usuario y contraseña incorrectos";
     return false;
 
 }
 
 function logout() {
-    sessionStorage.removeItem("username");
+    var answer = confirm("¿Desea cerrar su sesión?");
+
+
+    if(answer){
+        sessionStorage.removeItem("username");
+        alert("Tu sesion se ha cerrado");
+    }
+
+
 }
 
 
@@ -96,15 +103,31 @@ function signup(form) {
     var contrasena_repeat = form["contrasena_repeat"].value;
     var content_valid = document.getElementById("validacion_login");
 
-    if(contrasena == contrasena_repeat){
-        saveUser(form);
-        return true;
-    }else{
+    if(existsUser(form["usuario_input"].value)){
+        content_valid.innerHTML = "Usuario Ya registrado";
+        return false;
+    }
+
+    if(contrasena != contrasena_repeat){
         contrasena.value = "";
         contrasena_repeat.value = "";
         content_valid.innerHTML = "Contraseñas no coinciden";
-        return false
+        return false;
     }
+
+    if(existsEmail(form["email"].value)){
+        content_valid.innerHTML = "Email Ya registrado";
+        return false;
+    }
+
+    if(existsTelephone(form["telephone"].value)){
+        content_valid.innerHTML = "Telefono Ya registrado";
+        return false;
+    }
+
+    saveUser(form);
+    return true;
+
 }
 
 
@@ -116,6 +139,33 @@ function saveUser(form) {
 
     localStorage.setItem("users", JSON.stringify(jsonUsers));
 
+}
+
+function existsUser(user) {
+    for (i=0; i<jsonUsers.users.length;i++){
+        if(jsonUsers.users[i].user == user){
+           return true;
+        }
+    }
+    return false;
+}
+
+function existsEmail(email) {
+    for (i=0; i<jsonUsers.users.length;i++){
+        if(jsonUsers.users[i].email == email){
+            return true;
+        }
+    }
+    return false;
+}
+
+function existsTelephone(telephone) {
+    for (i=0; i<jsonUsers.users.length;i++){
+        if(jsonUsers.users[i].telephone == telephone){
+            return true;
+        }
+    }
+    return false;
 }
 
 
