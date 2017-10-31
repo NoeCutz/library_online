@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #lateral { float: left; width: 17%; }
 
 
@@ -80,3 +81,277 @@ td{
     color: white;
     padding: 0px 25px 0px 25px;
 }
+=======
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header, nav, section, aside, footer{
+    display: block;
+}
+
+.clear{
+    clear:both;
+}
+
+body{
+    margin:30px auto 0;
+    position:relative;
+    text-align:left;
+    width:960px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#contenedor{
+    width: 960px;
+}
+
+/*=====================================
+	Manejo del header
+=======================================*/
+
+header{
+    background-color: #ff8533;
+    width: 960px;
+    height:100px;
+    color: #ffffff;
+    border-bottom: 2px solid #993d00;
+}
+
+
+#logotipo{
+    position: relative;
+    margin:0;
+}
+
+#logotipo img{
+    float: left;
+    padding: 15px 0 0 15px;
+    width: 300px;
+    height: 57px;
+}
+
+
+
+#logotipo span{
+    margin: 40px 0 0 10px;
+    float: left;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav{
+    font-size: 14pt;
+}
+
+nav ul{
+    text-align: right;
+    position: absolute;
+    margin: 0 15px 0 0;
+    list-style:none outside none;
+    top: 40px;
+    right: 150px;
+}
+
+nav ul li{
+    text-align: center;
+    border-right: 1px solid;
+    margin: 0 10px;
+    padding: 0 10px;
+    float: left;
+}
+
+li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header #perfil{
+    width: 70px;
+    position: absolute;
+    float: left;
+    top: 5px;
+    right: 40px;
+}
+
+header #perfil #usuario{
+    width: 50px;
+    height: 40px;
+}
+
+header #perfil #nombre_usuario{
+    width: 50px;
+    height: 15px;
+    color: white;
+}
+
+header #perfil #carrito{
+    width: 50px;
+    height: 40px;
+}
+
+/*=====================================
+	Manejo del contenido
+=======================================*/
+
+section #presentacion{
+    width: 960px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+section #ofertas{
+    width: 930px;
+    height: 150px;
+    border: 1px solid #993d00;
+    margin:20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+section #presentacion video{
+    width: 600px;
+    height: 300px;
+}
+
+section #ofertas ul{
+    margin-top: 10px;
+    list-style: none;
+}
+
+section #ofertas ul li{
+    width: 250px;
+    float: left;
+    padding:0 0 0 5px;
+}
+
+#ofertas ul li img{
+    float: left;
+    width:120px;
+    height: 100px;
+}
+
+#ofertas ul li #title_oferta{
+    font-weight: bold;
+    width: 50px;
+    float: left;
+}
+
+#ofertas ul li #valoracion{
+    width: 50px;
+    float: left;
+}
+
+#ofertas ul li #precio{
+    font-size: 12pt;
+    width: 85px;
+    float: left;
+}
+
+
+#content_login{
+    text-align: center;
+    width: 960px;
+}
+
+#form_login table{
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+#form_login input, #form_signup input{
+    margin: 10px auto;
+    width: 200px;
+    height: 30px;
+    border-style:solid;
+
+}
+
+#form_login input:focus, #form_signup input:focus{
+    border-color: cornflowerblue;
+}
+
+#button_login{
+    width: 10px;
+    height: 100px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#button_signup{
+    width: 150px;
+    height: 100px;
+    font-weight: bold;
+}
+
+#login_registrarse{
+    padding-bottom: 5px;
+    width: 100px;
+}
+
+
+#login{
+    width: 500px;
+    height: 300px;
+    margin:0 230px;
+}
+
+#validacion_login{
+    height: 30px;
+    color: red;
+}
+
+#signup{
+    width: 500px;
+    height: 500px;
+    margin:0 230px;
+}
+
+
+/*=====================================
+	Manejo del footer
+=======================================*/
+
+footer{
+    width: 960px;
+    height: 60px;
+    background-color: #ff944d;
+    border-top: 2px solid #993d00;
+    color: #ffffff;
+    text-align: left;
+    font-size: 14pt;
+}
+
+
+#social{
+    width: 960px;
+    margin:5px;
+}
+
+#social ul{
+    padding:0;
+    list-style:none;
+}
+
+#social ul li {
+    float: left;
+    padding:0 0 0 5px;
+}
+
+#derechos{
+    float: left;
+    width: 960px;
+    margin: 0 30px 0 10px;
+    padding: 0 30px 0 0;
+}
+
+
+>>>>>>> db3fe627518a6bc7cc00eeeb62cd1740620ad3da

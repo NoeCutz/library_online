@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingresar</title>
+    <link rel="stylesheet" href="css/estilos.css" type="text/css" media="screen">
+    <script type="application/javascript" src="js/eventos.js"></script>
+</head>
+<body>
+<div id="contenedor">
+    <header>
+        <div id="logotipo">
+            <a href="index.html">
+                <img src="images/logo_header.png" href="index.html"> </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+            </ul>
+        </nav>
+
+        <div id="perfil">
+            <img id="usuario" src="images/user.png">
+            <div id="nombre_usuario"></div>
+            <img id="carrito" src="images/carrito.png">
+        </div>
+    </header>
+
+    <section id="content_login">
+        <div id="login">
+            <h2>Ingresar</h2>
+            <p>Ingresa para iniciar a navegar a través de las historias</p>
+            <form id="form_login" method="post" action="index.html" onsubmit="return login(this);">
+                <table>
+                    <tr>
+                        <td colspan="2" id="validacion_login"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Usuario:
+                        </td>
+                        <td><input name="usuario_input" id="usuario_input" type="text" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Contraseña:</td>
+                        <td><input name="contrasena" id="contrasena" type="password" required="required"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <input id="button_login" type="submit" value="Ingresar">
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+            <div id="login_registrarse">
+                <a href="signup.html">Registrate</a>
+
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div id="social">
+            <ul id="red_social">
+                <li><a href="#" title="facebook"><img src="images/facebook.png"></a></li>
+                <li><a href="#" title="twitter"><img src="images/twitter.png"></a></li>
+            </ul>
+        </div>
+
+        <div id="derechos">
+            <small>Derechos reservados &copy; 2017 Librería Flourish y Blotts</small>
+        </div>
+
+    </footer >
+</div>
+</body>
+</html>
+
+</body>
+</html>
