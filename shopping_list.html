@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Carrito de compras</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/shop_list.css">
-    <script src="js/shop_list.js"></script>
+    <script type="text/javascript" src="js/shop_list.js"></script>
 </head>
 <body>
     <header>
@@ -29,9 +29,34 @@
 
     <div id="contenedor">
         <h1>Carrito de compras</h1>
-        <div id="booksSelected"> </div>
-        <p>Total: </p>
-        <button id="pagar">Pagar</button>
+        <form id="shopping_cart" method="post">
+            <table class="shopping_cart">
+                <thead>
+                <tr>
+                    <th scope="col">Libro</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </form>
+
+        <p><strong>Total:</strong> <span id="cost_total"></span> </p>
+        <ul id="cart_actions">
+            <li>
+                <input type="submit" name="update" id="update-cart" class="btn" value="Actualizar Compras">
+            </li>
+            <li>
+                <input type="submit" name="delete" id="empty-cart" class="btn" value="Vaciar carrito">
+            </li>
+            <li>
+                <a href="index.html" class="btn">Seguir navegando</a>
+            </li>
+            <li>
+                <a href="pago.html" class="btn">Pagar</a>
+            </li>
+        </ul>
     </div>
 
     <footer>
