@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <title>Inicio</title>
     <link rel="stylesheet" href="css/estilos.css" type="text/css" media="screen">
+    <script type="application/javascript" src="js/eventos.js"></script>
 </head>
 <body>
 
 <div id="contenedor">
     <header>
         <div id="logotipo">
-            <img src="images/book.png">
+            <a href="index.html">
+            <img src="images/book.png" href="index.html"> </a>
             <span>Librería Flourish y Blotts</span>
         </div>
 
         <nav>
             <ul>
-                <li>Inicio</li>
-                <li>Productos</li>
-                <li>Acerca de</li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="about.html">Acerca de</a></li>
             </ul>
         </nav>
 
         <div id="perfil">
-            <img id="usuario" src="images/user.png">
+            <img id="usuario" src="images/user.png" onclick="eventProfile()">
             <img id="carrito" src="images/carrito.png">
         </div>
     </header>
@@ -70,7 +72,7 @@
         </div>
 
         <div id="derechos">
-            <small>Derechos reservados &copy; 2017 Libreria online</small>
+            <small>Derechos reservados &copy; 2017 Librería Flourish y Blotts</small>
         </div>
 
     </footer >

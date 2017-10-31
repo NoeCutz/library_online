@@ -67,7 +67,7 @@ nav ul{
     text-align: right;
     position: absolute;
     margin: 0 15px 0 0;
-    list-style: none;
+    list-style:none outside none;
     top: 40px;
     right: 150px;
 }
@@ -80,6 +80,10 @@ nav ul li{
     float: left;
 }
 
+li a{
+    color: #ffffff;
+    text-decoration: none;
+}
 
 header #perfil{
     width: 70px;
@@ -158,6 +162,58 @@ section #ofertas ul li{
     float: left;
 }
 
+
+#content_login{
+    text-align: center;
+    width: 960px;
+}
+
+#form_login table{
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+#form_login input{
+    margin: 10px auto;
+    width: 200px;
+    height: 20px;
+    border-style:solid;
+
+}
+
+
+
+
+#form_login input:focus{
+    border-color: cornflowerblue;
+}
+
+#form_login #button_login{
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#login_registrarse{
+    padding-bottom: 5px;
+    width: 100px;
+}
+
+
+#login{
+    width: 500px;
+    height: 300px;
+    margin:0 230px;
+}
+
+#validacion_login{
+    height: 30px;
+}
+
 /*=====================================
 	Manejo del footer
 =======================================*/
@@ -194,3 +250,5 @@ footer{
     margin: 0 30px 0 10px;
     padding: 0 30px 0 0;
 }
+
+
