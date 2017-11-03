@@ -34,7 +34,8 @@
             <div id="direccion-envio" align="left">
 
                     <table id="info-envio">
-                        <tr><td>Address:</td><td><input type="text" id="addr-pago"></td></tr>
+                        <tr><td>Address:</td><td><input type="text" id="addr-pago-ln1" class="addr-pago"></td></tr>
+                        <tr><td></td><td><input type="text" id="addr-pago-ln2" class="addr-pago"></td></tr>
                         <tr><td>P.C.</td><td><input type="text" id="postc-pago"></td></tr>
                         <tr><td>Country: </td><td><select name="country" value="MEX" id="pais-pago" form="form-pago">
                             <option value="AFG">Afghanistan</option>
@@ -343,14 +344,15 @@
         </div>
             <div id="cobro-contenido">
                 <div id="pago-cobro" align="left">
-
-                    <label >Credit card numbrer:</label>
-                    <p><input type="number" maxlength="16"></p>
+                    <h1>Billing</h1>
                     <label>Credit card numbrer:</label>
-                    <p><input type="number" maxlength="16"></p>
+                    <p><input type="number" maxlength="16" min="0"></p>
+                    <label>Name:</label>
+                    <p><input type="text"></p>
+
                 <div class="form-group" id="expiration-date">
                 <label>Expiration Date</label>
-                <select>
+                <p><select>
                     <option value="01">Enero</option>
                     <option value="02">Febrero </option>
                     <option value="03">Marzo</option>
@@ -372,16 +374,29 @@
                     <option value="21"> 2021</option>
                     <option value="22"> 2022</option>
                     <option value="23"> 2023</option>
-                </select>
-            </div>
-
-
+                </select></p>
+                    <label>Security numbrer:</label>
+                    <p><input type="number" maxlength="5" min="0"></p>
                 </div>
-                <div id="total-cobro" align="right">
+                </div>
+                <div id="total-cobro" >
+                    <table id="total-calc">
+                        <tr><td>Quantity</td><td id="cantidad-prods" align="right">1</td></tr>
+                        <tr><td colspan="2">&nbsp;</td></tr>
+                        <tr><td>Cost</td><td id="costo-prods" align="right">$369.00</td></tr>
+                        <tr><td colspan="2">&nbsp;</td></tr>
+                        <tr><td>Shipment</td><td id="costo-envio" align="right">$100.00</td></tr>
+                        <tr><td colspan="2"></td></tr>
+                        <tr><td colspan="2" id="total-line" style="border-bottom: medium">&nbsp;</td></tr>
+                        <tr><td>TOTAL:</td><td id="total-prods" align="right">$469.00</td></tr>
+                        <tr><td colspan="2" style="border-bottom: medium">&nbsp;</td></tr>
+                    </table>
+                
+
 
                 </div>
         </div>
-            <input type="submit" id="comprar" value="Confirm">
+            <input type="submit" id="comprar" value="Confirm" align="center">
         </form>
     </section>
     <div id="pie">

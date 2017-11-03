@@ -51,8 +51,6 @@ header{
     height: 57px;
 }
 
-
-
 #logotipo span{
     margin: 40px 0 0 10px;
     float: left;
@@ -306,9 +304,8 @@ padding-left: 150px;
 #prod-precio{
     color: red;
 }
-#addr-pago{
-    width: 100%;
-    line-height: 4;
+.addr-pago{
+    width:100%;
     text-align: start;
 }
 
@@ -327,12 +324,30 @@ padding-left: 150px;
 
     color: white;
     padding: 0px 25px 0px 25px;
+    margin: 5%;
+    align: center;
 }
 
 #formas-de-envio{
     padding-right: 100px;
     font-size: 30px;
     text-align: justify;
+}
+
+#formas-de-envio input[type=radio]{
+}
+
+#pago-cobro input[type=number]{
+    width: 70%;
+}
+
+#total-calc{
+    width:  80%;
+}
+
+#total-line{
+    border-top: 1pt solid black;
+
 }
 #pago-contenido select{
     max-width: 40%;
@@ -347,6 +362,9 @@ padding-left: 150px;
 }
 
 #cobro-contenido #pago-cobro { float: left; width: 45%; }
+#cobro-contenido #pago-cobro input[type=text]{
+    width: 80%;
+}
 #cobro-contenido #total-cobro { float: right; width: 35%; }
 
 
