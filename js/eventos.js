@@ -172,9 +172,9 @@ function existsTelephone(telephone) {
 
 
 function loadCart() {
-    var keys= Object.keys(localStorage);
+    var keys= Object.keys(sessionStorage);
     for (var i=0; i<keys.length; i++){
-        var element= JSON.parse(localStorage.getItem(keys[i]));
+        var element= JSON.parse(sessionStorage.getItem(keys[i]));
         addElementsToBody(element);
     }
     showTotal(keys.length);
@@ -189,7 +189,7 @@ function addElementsToBody(element) {
 
 function deleteElement(button) {
     var row = button.parentNode.parentNode;
-    localStorage.removeItem(row.cells[0].innerHTML);
+    sessionStorage.removeItem(row.cells[0].innerHTML);
     location.reload();
 }
 function showTotal(length) {
@@ -204,7 +204,22 @@ function showTotal(length) {
 }
 
 function emptyCart() {
-    localStorage.clear();
+    sessionStorage.clear();
     location.reload();
 }
 
+function addToCart(name, price) {
+    var book=[name,price];
+    sessionStorage.setItem(name,JSON.stringify(book));
+}
+function addToCart_P() {
+    var name = document.getElementById("titulo").innerHTML;
+    var price=document.getElementById("prod-precio").innerHTML;
+    addToCart(name,price);
+}
+function addToCart_I(item) {
+    var node= item.parentNode;
+    var name= node.getElementsByClassName("bookName")[0].innerHTML;
+    var price = node.getElementsByClassName("bookPrice")[0].innerHTML;
+    addToCart(name,price);
+}
