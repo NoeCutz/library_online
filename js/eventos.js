@@ -203,6 +203,7 @@ function showTotal(length) {
     document.getElementById("cost_total").innerHTML=total.toString();
 }
 
+
 function emptyCart() {
     localStorage.clear();
     location.reload();
