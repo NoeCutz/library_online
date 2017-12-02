@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <title>Acerca de Flourish y Blotts</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/about.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
     <script type="application/javascript" src="js/eventos.js"></script>
 </head>
 <body>
     <header>
-    <div id="logotipo">
-        <a href="index.html" ><img src="images/logo_header.png" ></a>
-        <!--
-        <span>Librería Flourish y Blotts</span>
-        -->
-    </div>
+        <div id="logotipo">
+            <a href="index.html">
+                <img src="images/logo.png">
+            </a>
+            <span>Florish y Blotts</span>
+        </div>
 
+        <div id="perfil">
+            <div id="nombre_usuario"></div>
+            <a href="login.html"><img id="usuario" src="images/user.png"></a>
+            <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
+        </div>
+    </header>
+
+    <hr>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -22,18 +31,14 @@
             <li><a href="about.html">Acerca de</a></li>
         </ul>
     </nav>
+    <hr>
 
-     <div id="perfil">
-            <img id="usuario" src="images/user.png">
-            <div id="nombre_usuario"></div>
-            <a href="shopping_list.html"><img id="carrito" src="images/carrito.png"></a>
-        </div>
-    </header>
+    <!-- Fin de header -->
 
     <section class="about">
         <h1>Acerca de Flourish y Blotts</h1>
         <article id="info">
-            <p><img src="images/logo_impact.png">Flouris y Blotts se fundó en 2017 para brindar la más amplía variedad
+            <p><img src="images/logo.png">Flouris y Blotts se fundó en 2017 para brindar la más amplía variedad
                 de libros especializados en el país. Por el momento no contamos con tienda física pero sí con muchos
                 libros científicos ;)<br>
                 ¡Todos los libros al mejor precio! <br>
@@ -48,6 +53,8 @@
         </article>
     </section>
 
+    <!-- Footer -->
+    <hr>
     <footer>
         <div id="social">
             <ul id="red_social">
@@ -57,7 +64,7 @@
         </div>
 
         <div id="derechos">
-            <small>Todos los derechos reservados &copy; 2017 Flourish y Blotts</small>
+            <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
         </div>
     </footer >
 </body>

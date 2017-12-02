@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/estilos.css" title="style" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
     <script type="application/javascript" src="js/eventos.js"></script>
     <title>Productos</title>
 </head>
 <body>
-<div id="contenedor">
-    <header>
-        <div id="logotipo">
-            <a href="index.html">
-                <img src="images/logo_header.png" href="index.html"> </a>
-        </div>
 
+        <header>
+            <div id="logotipo">
+                <a href="index.html">
+                    <img src="images/logo.png">
+                </a>
+                <span>Florish y Blotts</span>
+            </div>
+
+            <div id="perfil">
+                <div id="nombre_usuario"></div>
+                <a href="login.html"><img id="usuario" src="images/user.png"></a>
+                <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
+            </div>
+        </header>
+
+        <hr>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -21,17 +32,13 @@
                 <li><a href="about.html">Acerca de</a></li>
             </ul>
         </nav>
+        <hr>
 
-         <div id="perfil">
-            <img id="usuario" src="images/user.png">
-            <div id="nombre_usuario"></div>
-             <a href="shopping_list.html"><img id="carrito" src="images/carrito.png"></a>
-        </div>
-    </header>
+        <!-- Fin de header -->
     <section id="content_prod">
     <div id="prod-lateral">
         <div id="bookart">
-            <img id="prod-portada" width="100%" height="100%" src="img/lifeofpi.jpg">
+            <img id="prod-portada" width="100%" height="100%" src="images/products/lifeofpi.jpg">
          </div>
         <div class="prod-stars">
             <form action="">
@@ -76,11 +83,13 @@
             </div>
         </div>
         <div id="banner" align="right">
-            <img id="ad" src="img/art-ad.jpg" width="150" height="500">
+            <img id="ad" src="images/products/art-ad.jpg" width="150" height="500">
         </div>
     </div>
     </section>
-    <div id="pie">
+
+        <!-- Footer -->
+        <hr>
         <footer>
             <div id="social">
                 <ul id="red_social">
@@ -90,12 +99,10 @@
             </div>
 
             <div id="derechos">
-                <small>Derechos reservados &copy; 2017 Librería Flourish y Blotts</small>
+                <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
             </div>
 
         </footer >
-    </div>
-</div>
 
 </body>
 </html>
