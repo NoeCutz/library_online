@@ -1,0 +1,182 @@
+/*
+   Manejo general
+ */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header, nav, section, aside, footer{
+    display: block;
+}
+
+.clear{
+    clear:both;
+}
+
+body{
+    margin:30px auto 0;
+    position:relative;
+    text-align:left;
+    width:960px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+#contenedor{
+    width: 960px;
+}
+
+/*=====================================
+	Manejo del header
+=======================================*/
+
+header{
+    width: 960px;
+    height:100px;
+    color: #000000;
+}
+
+#logotipo{
+    position: relative;
+    margin:0;
+}
+
+#logotipo img{
+    float: left;
+    padding: 15px 0 0 15px;
+    width: 8%;
+}
+
+#logotipo span{
+    margin: 40px 0 0 10px;
+    float: left;
+    font-family: 'Spectral SC', serif;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav{
+    font-size: 14pt;
+    font-family: 'Lora', serif;
+}
+
+nav ul{
+    /*
+    position: absolute;
+    */margin: 0 15px 0 0;
+    overflow: hidden;
+    list-style:none outside none;
+    top: 40px;
+    right: 150px;
+}
+
+nav ul li{
+    /*
+    border-right: 1px solid;
+     */
+    display: inline;
+    margin: 0 10px;
+    padding: 0 10px;
+    /*
+    float: left;
+     */
+    text-align: center;
+}
+
+li a{
+    color: #1e1d1c;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+li a:hover{
+    color:#7795a3;
+}
+
+header #perfil{
+    width: 150px;
+    /*
+    position: absolute;
+     */
+    float: right;
+    top: 15px;
+    right: 40px;
+    margin-top: 15px;
+}
+
+header #perfil #usuario img{
+    width: 20%;
+}
+
+header #perfil #nombre_usuario{
+    color: #d71a26;
+    float: left;
+    display: inline-block;
+    text-align: left;
+    padding: 1em;
+}
+header #perfil #carrito img{
+    width: 20%;
+}
+
+/*=====================================
+	Manejo del contenido
+=======================================*/
+
+.about {
+    margin: 15px 15px 15px 50px;
+    color: #00715E;
+    font-family: Ebrima, serif;
+}
+
+.about p{
+    padding-top: 15px;
+}
+
+.about img{
+    float: right;
+    margin: 10px;
+    width: 25%;
+    height: 25%;
+}
+/*=====================================
+	Manejo del footer
+=======================================*/
+
+#pie { clear: both; }
+
+footer{
+    width: 960px;
+    height: 60px;
+    color: #1e1d1c;
+    text-align: left;
+    font-size: 14pt;
+}
+
+
+#social{
+    width: 960px;
+    margin:5px;
+}
+
+#social ul{
+    padding:0;
+    list-style:none;
+}
+
+#social ul li {
+    float: left;
+    padding:0 0 0 5px;
+}
+
+#derechos{
+    float: left;
+    width: 960px;
+    margin: 0 30px 0 10px;
+    padding: 0 30px 0 0;
+}

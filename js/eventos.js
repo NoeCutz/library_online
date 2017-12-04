@@ -22,12 +22,17 @@ window.onload = function () {
     eventProfile();
     init();
 
+    var table_shopping = document.getElementById("shopping_cart");
+
+    if(table_shopping !=  undefined){
+        loadCart()
+    }
+
     function eventProfile() {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
             if (sessionStorage.username) {
                 logout();
-                location.href = "index.html"
             } else {
                 location.href = "login.html"
             }
@@ -50,6 +55,42 @@ window.onload = function () {
             jsonUsers = JSON.parse(localStorage.getItem("users"));
             console.log(jsonUsers);
         }
+    }
+
+
+    function loadCart() {
+        var keys= Object.keys(sessionStorage);
+        var numItems = 0;
+
+
+        for (var i=0; i<keys.length; i++){
+
+            if(keys[i] != "username") {
+                var element= JSON.parse(sessionStorage.getItem(keys[i]));
+                addElementsToBody(element);
+                numItems++;
+            }
+
+        }
+        showTotal(numItems);
+    }
+
+    function addElementsToBody(element) {
+        var inserElementCode = "<tr><td>" +element[0]+"</td>";
+        inserElementCode+= "<td>"+ element[1]+"</td>";
+        inserElementCode+= "<td><input type='button' class='delete' value='Eliminar' onclick=\"deleteElement(this)\"></td>";
+        document.getElementById("tableBody").innerHTML +=inserElementCode;
+    }
+
+    function showTotal(length) {
+        var table = document.getElementById("shopping_cart");
+        var total=0;
+        if (length>0){
+            for(var i=0;i<length; i++){
+                total+= parseFloat(table.rows[i+1].cells[1].innerHTML);
+            }
+        }
+        document.getElementById("cost_total").innerHTML=total.toString();
     }
 
 };
@@ -92,6 +133,7 @@ function logout() {
     if(answer){
         sessionStorage.removeItem("username");
         alert("Tu sesion se ha cerrado");
+        location.href = "login.html"
     }
 
 
@@ -168,6 +210,32 @@ function existsTelephone(telephone) {
     return false;
 }
 
+//Shopping list
 
 
+function deleteElement(button) {
+    var row = button.parentNode.parentNode;
+    sessionStorage.removeItem(row.cells[0].innerHTML);
+    location.reload();
+}
 
+function emptyCart() {
+    sessionStorage.clear();
+    location.reload();
+}
+
+function addToCart(name, price) {
+    var book=[name,price];
+    sessionStorage.setItem(name,JSON.stringify(book));
+}
+function addToCart_P() {
+    var name = document.getElementById("titulo").innerHTML;
+    var price=document.getElementById("prod-precio").innerHTML;
+    addToCart(name,price);
+}
+function addToCart_I(item) {
+    var node= item.parentNode;
+    var name= node.getElementsByClassName("bookName")[0].innerHTML;
+    var price = node.getElementsByClassName("bookPrice")[0].innerHTML;
+    addToCart(name,price);
+}

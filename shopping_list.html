@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de compras</title>
+    <script type="text/javascript" src="js/eventos.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/shop_list.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div id="logotipo">
+            <a href="index.html">
+                <img src="images/logo.png">
+            </a>
+            <span>Florish y Blotts</span>
+        </div>
+
+        <div id="perfil">
+            <div id="nombre_usuario"></div>
+            <a href="login.html"><img id="usuario" src="images/user.png"></a>
+            <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
+        </div>
+    </header>
+
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="producto.html">Productos</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <!-- Fin de header -->
+
+    <div id="contenedor">
+        <h1>Carrito de compras</h1>
+        <form method="post">
+            <table class="shopping_cart" id="shopping_cart">
+                <thead>
+                <tr>
+                    <th scope="col">Libro</th>
+                    <th scope="col" id="price">Precio</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </form>
+
+        <p><br><strong>Total:</strong> $<span id="cost_total"></span> </p>
+        <ul id="cart_actions">
+            <li>
+                <input type="submit" name="delete" id="empty-cart" class="btn" value="Vaciar carrito" onclick="emptyCart()">
+            </li>
+            <li>
+                <a href="pago.html" class="btn"><input type="button" class="btn" value="Pagar"></a>
+
+            </li>
+            <li>
+                <a href="index.html" class="btn">Seguir navegando</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <hr>
+    <footer>
+        <div id="social">
+            <ul id="red_social">
+                <li><a href="#" title="facebook"><img src="images/facebook.png"></a></li>
+                <li><a href="#" title="twitter"><img src="images/twitter.png"></a></li>
+            </ul>
+        </div>
+
+        <div id="derechos">
+            <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+</body>
+</html>

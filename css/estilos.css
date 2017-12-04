@@ -19,6 +19,7 @@ body{
     width:960px;
     padding-left: 20px;
     padding-right: 20px;
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -31,13 +32,10 @@ body{
 =======================================*/
 
 header{
-    background-color: #ff8533;
     width: 960px;
     height:100px;
-    color: #ffffff;
-    border-bottom: 2px solid #993d00;
+    color: #000000;
 }
-
 
 #logotipo{
     position: relative;
@@ -47,68 +45,80 @@ header{
 #logotipo img{
     float: left;
     padding: 15px 0 0 15px;
-    width: 300px;
-    height: 57px;
+    width: 8%;
 }
-
-
 
 #logotipo span{
     margin: 40px 0 0 10px;
     float: left;
-    font-size: 16pt;
+    font-family: 'Spectral SC', serif;
+    font-size: 20pt;
     font-weight: bold;
     text-align: center;
 }
 
 nav{
     font-size: 14pt;
+    font-family: 'Lora', serif;
 }
 
 nav ul{
-    text-align: right;
+    /*
     position: absolute;
-    margin: 0 15px 0 0;
+    */margin: 0 15px 0 0;
+    overflow: hidden;
     list-style:none outside none;
     top: 40px;
     right: 150px;
 }
 
 nav ul li{
-    text-align: center;
+    /*
     border-right: 1px solid;
+     */
+    display: inline;
     margin: 0 10px;
     padding: 0 10px;
+    /*
     float: left;
+     */
+    text-align: center;
 }
 
 li a{
-    color: #ffffff;
+    color: #1e1d1c;
     text-decoration: none;
+    padding: 14px 16px;
+}
+
+li a:hover{
+    color:#7795a3;
 }
 
 header #perfil{
-    width: 70px;
+    width: 150px;
+    /*
     position: absolute;
-    float: left;
-    top: 5px;
+     */
+    float: right;
+    top: 15px;
     right: 40px;
+    margin-top: 15px;
 }
 
-header #perfil #usuario{
-    width: 50px;
-    height: 40px;
+header #perfil #usuario img{
+    width: 20%;
 }
 
 header #perfil #nombre_usuario{
-    width: 50px;
-    height: 15px;
-    color: white;
+    color: #d71a26;
+    float: left;
+    display: inline-block;
+    text-align: left;
+    padding: 1em;
 }
-
-header #perfil #carrito{
-    width: 50px;
-    height: 40px;
+header #perfil #carrito img{
+    width: 20%;
 }
 
 /*=====================================
@@ -181,8 +191,6 @@ section #ofertas ul li{
     text-align: center;
 }
 
-
-
 #form_login input, #form_signup input{
     margin: 10px auto;
     width: 200px;
@@ -231,17 +239,152 @@ section #ofertas ul li{
     margin:0 230px;
 }
 
+#prod-lateral { float: left; width: 17%; }
+
+
+#prod-portada{
+    padding:10px;
+}
+#prod-contenido { float: right; width: 78%; }
+#prod-contenido #descripcion-libro { float: left; width: 75%; }
+#prod-contenido #banner { float: right; width: 25%; }
+
+div.prod-stars {
+    padding: 7px;
+    width: 270px;
+    display: inline-block;
+    align-content: left;
+}
+
+input.prod-star { display: none; }
+
+label.prod-star {
+    align-content: right;
+    font-size: 40px;
+    color: #444;
+    transition: all .2s;
+}
+div.prod-bookart{
+    float: right;
+}
+
+input.prod-star:checked + label.prod-star:before {
+    content: '☆';
+    color: cornflowerblue;
+    transition: all .25s;
+}
+
+input.prod-star-5:checked + label.prod-star:before {
+    color: #ffe513;
+    text-shadow: 0 0 20px #952;
+}
+
+input.prod-star-1:checked + label.prod-star:before { color: #F62; }
+
+label.prod-star:before {
+    content:  '☆';
+}
+
+#prod-detalle{
+    horiz-align: center;
+    align-content: center;
+}
+
+#isbn{
+padding-left: 150px;
+}
+#isbn td{
+    border: ridge;
+    border-width: 2px;
+}
+
+#prod-payment, #content_pago{
+    font-size: large;
+    font-weight: bold;
+    font-family: "Verdana";
+}
+
+#pago-contenido{
+    padding: 10px;
+    width:  100%;
+    float: right;
+}
+#prod-precio{
+    color: red;
+}
+.addr-pago{
+    width:100%;
+    text-align: start;
+}
+
+
+#prod-cart-button{
+    font-size: larger;
+    background-color: black;
+
+    color: white;
+    padding: 0px 25px 0px 25px;
+}
+
+#comprar{
+    font-size: larger;
+    background-color: black;
+
+    color: white;
+    padding: 0px 25px 0px 25px;
+    margin: 5%;
+    align: center;
+}
+
+#formas-de-envio{
+    padding-right: 100px;
+    font-size: 30px;
+    text-align: justify;
+}
+
+#formas-de-envio input[type=radio]{
+}
+
+#pago-cobro input[type=number]{
+    width: 70%;
+}
+
+#total-calc{
+    width:  80%;
+}
+
+#total-line{
+    border-top: 1pt solid black;
+
+}
+#pago-contenido select{
+    max-width: 40%;
+}
+#pago-contenido #direccion-envio { float: left; width: 45%; }
+#pago-contenido #formas-de-envio { float: right; width: 35%; }
+
+
+#cobro-contenido{
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+
+#cobro-contenido #pago-cobro { float: left; width: 45%; }
+#cobro-contenido #pago-cobro input[type=text]{
+    width: 80%;
+}
+#cobro-contenido #total-cobro { float: right; width: 35%; }
+
 
 /*=====================================
 	Manejo del footer
 =======================================*/
+#pie { clear: both; }
 
 footer{
     width: 960px;
     height: 60px;
-    background-color: #ff944d;
-    border-top: 2px solid #993d00;
-    color: #ffffff;
+    color: #1e1d1c;
     text-align: left;
     font-size: 14pt;
 }
@@ -268,5 +411,3 @@ footer{
     margin: 0 30px 0 10px;
     padding: 0 30px 0 0;
 }
-
-
