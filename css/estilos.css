@@ -19,6 +19,7 @@ body{
     width:960px;
     padding-left: 20px;
     padding-right: 20px;
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -31,13 +32,10 @@ body{
 =======================================*/
 
 header{
-    background-color: #ff8533;
     width: 960px;
     height:100px;
-    color: #ffffff;
-    border-bottom: 2px solid #993d00;
+    color: #000000;
 }
-
 
 #logotipo{
     position: relative;
@@ -47,8 +45,7 @@ header{
 #logotipo img{
     float: left;
     padding: 15px 0 0 15px;
-    width: 300px;
-    height: 57px;
+    width: 8%;
 }
 
 
@@ -56,60 +53,75 @@ header{
 #logotipo span{
     margin: 40px 0 0 10px;
     float: left;
-    font-size: 16pt;
+    font-family: 'Spectral SC', serif;
+    font-size: 20pt;
     font-weight: bold;
     text-align: center;
 }
 
 nav{
     font-size: 14pt;
+    font-family: 'Lora', serif;
 }
 
 nav ul{
-    text-align: right;
+    /*
     position: absolute;
-    margin: 0 15px 0 0;
+    */margin: 0 15px 0 0;
+    overflow: hidden;
     list-style:none outside none;
     top: 40px;
     right: 150px;
 }
 
 nav ul li{
-    text-align: center;
+    /*
     border-right: 1px solid;
+     */
+    display: inline;
     margin: 0 10px;
     padding: 0 10px;
+    /*
     float: left;
+     */
+    text-align: center;
 }
 
 li a{
-    color: #ffffff;
+    color: #1e1d1c;
     text-decoration: none;
+    padding: 14px 16px;
+}
+
+li a:hover{
+    color:#7795a3;
 }
 
 header #perfil{
-    width: 70px;
+    width: 150px;
+    /*
     position: absolute;
-    float: left;
-    top: 5px;
+     */
+    float: right;
+    top: 15px;
     right: 40px;
+    margin-top: 15px;
 }
 
-header #perfil #usuario{
-    width: 50px;
-    height: 40px;
+header #perfil #usuario img{
+    width: 20%;
 }
 
 header #perfil #nombre_usuario{
-    width: 50px;
-    height: 15px;
-    color: white;
+    color: #d71a26;
+    float: left;
+    display: inline-block;
+    text-align: left;
+    padding: 1em;
 }
 
-header #perfil #carrito{
-    width: 50px;
-    height: 40px;
-    float: left;
+header #perfil #carrito img{
+    width: 20%;
 }
 
 /*=====================================
@@ -182,8 +194,6 @@ section #ofertas ul li{
     text-align: center;
 }
 
-
-
 #form_login input, #form_signup input{
     margin: 10px auto;
     width: 200px;
@@ -232,9 +242,7 @@ section #ofertas ul li{
     margin:0 230px;
 }
 
-
 #prod-lateral { float: left; width: 17%; }
-
 
 
 #prod-portada{
@@ -359,9 +367,7 @@ padding-left: 150px;
 footer{
     width: 960px;
     height: 60px;
-    background-color: #ff944d;
-    border-top: 2px solid #993d00;
-    color: #ffffff;
+    color: #1e1d1c;
     text-align: left;
     font-size: 14pt;
 }

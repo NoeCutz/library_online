@@ -22,6 +22,12 @@ window.onload = function () {
     eventProfile();
     init();
 
+    var table_shopping = document.getElementById("shopping_cart");
+
+    if(table_shopping !=  undefined){
+        loadCart()
+    }
+
     function eventProfile() {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
@@ -49,6 +55,42 @@ window.onload = function () {
             jsonUsers = JSON.parse(localStorage.getItem("users"));
             console.log(jsonUsers);
         }
+    }
+
+
+    function loadCart() {
+        var keys= Object.keys(sessionStorage);
+        var numItems = 0;
+
+
+        for (var i=0; i<keys.length; i++){
+
+            if(keys[i] != "username") {
+                var element= JSON.parse(sessionStorage.getItem(keys[i]));
+                addElementsToBody(element);
+                numItems++;
+            }
+
+        }
+        showTotal(numItems);
+    }
+
+    function addElementsToBody(element) {
+        var inserElementCode = "<tr><td>" +element[0]+"</td>";
+        inserElementCode+= "<td>"+ element[1]+"</td>";
+        inserElementCode+= "<td><input type='button' class='delete' value='Eliminar' onclick=\"deleteElement(this)\"></td>";
+        document.getElementById("tableBody").innerHTML +=inserElementCode;
+    }
+
+    function showTotal(length) {
+        var table = document.getElementById("shopping_cart");
+        var total=0;
+        if (length>0){
+            for(var i=0;i<length; i++){
+                total+= parseFloat(table.rows[i+1].cells[1].innerHTML);
+            }
+        }
+        document.getElementById("cost_total").innerHTML=total.toString();
     }
 
 };
@@ -171,36 +213,10 @@ function existsTelephone(telephone) {
 //Shopping list
 
 
-function loadCart() {
-    var keys= Object.keys(sessionStorage);
-    for (var i=0; i<keys.length; i++){
-        var element= JSON.parse(sessionStorage.getItem(keys[i]));
-        addElementsToBody(element);
-    }
-    showTotal(keys.length);
-}
-
-function addElementsToBody(element) {
-    var inserElementCode = "<tr><td>" +element[0]+"</td>";
-    inserElementCode+= "<td>"+ element[1]+"</td>";
-    inserElementCode+= "<td><input type='button' class='delete' value='Eliminar' onclick=\"deleteElement(this)\"></td>";
-    document.getElementById("tableBody").innerHTML +=inserElementCode;
-}
-
 function deleteElement(button) {
     var row = button.parentNode.parentNode;
     sessionStorage.removeItem(row.cells[0].innerHTML);
     location.reload();
-}
-function showTotal(length) {
-    var table = document.getElementById("shopping_cart");
-    var total=0;
-    if (length>0){
-        for(var i=0;i<length; i++){
-            total+= parseFloat(table.rows[i+1].cells[1].innerHTML);
-        }
-    }
-    document.getElementById("cost_total").innerHTML=total.toString();
 }
 
 function emptyCart() {
