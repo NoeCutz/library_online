@@ -32,12 +32,17 @@ window.onload = function () {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
             if (sessionStorage.username) {
-                logout();
+                location.href = "profile.html";
             } else {
-                location.href = "login.html"
+                location.href = "login.html";
             }
 
         }
+    }
+
+    var content_profile = document.getElementById("content_profile");
+    if(content_profile != undefined){
+        showDataUser();
     }
 
     function init() {
@@ -209,6 +214,27 @@ function existsTelephone(telephone) {
     }
     return false;
 }
+
+
+function showDataUser() {
+    var user;
+
+    for (i=0; i<jsonUsers.users.length;i++){
+        if(jsonUsers.users[i].user == sessionStorage.username){
+            user = jsonUsers.users[i];
+            console.log("user")
+        }
+    }
+
+    console.log(user);
+    document.getElementById("usuario_profile").value = user.user;
+    document.getElementById("name_profile").value = user.name;
+    document.getElementById("email_profile").value = user.email;
+    document.getElementById("telephone_profile").value = user.telephone;
+
+
+}
+
 
 //Shopping list
 

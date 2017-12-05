@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+body{
+    background-color: #F9FBFC;
+}
+
+hr{
+    border-top: 1px solid;
+}
 
 header, nav, section, aside, footer{
     display: block;
@@ -34,7 +41,8 @@ body{
 header{
     width: 960px;
     height:100px;
-    color: #000000;
+    color: #FCEA90;
+    background-color: #56A7A7;
 }
 
 #logotipo{
@@ -60,6 +68,7 @@ header{
 nav{
     font-size: 14pt;
     font-family: 'Lora', serif;
+    background-color: #A0DBDB;
 }
 
 nav ul{
@@ -85,13 +94,13 @@ nav ul li{
     text-align: center;
 }
 
-li a{
-    color: #1e1d1c;
+nav ul li a{
+    color: #000000;
     text-decoration: none;
     padding: 14px 16px;
 }
 
-li a:hover{
+nav ul li a:hover{
     color:#7795a3;
 }
 
@@ -102,7 +111,6 @@ header #perfil{
      */
     float: right;
     top: 15px;
-    right: 40px;
     margin-top: 15px;
 }
 
@@ -111,12 +119,11 @@ header #perfil #usuario img{
 }
 
 header #perfil #nombre_usuario{
-    color: #d71a26;
-    float: left;
-    display: inline-block;
+    color: #FCEA90;
     text-align: left;
-    padding: 1em;
 }
+
+
 header #perfil #carrito img{
     width: 20%;
 }
@@ -134,7 +141,7 @@ section #presentacion{
 section #ofertas{
     width: 930px;
     height: 150px;
-    border: 1px solid #993d00;
+    border: 3px solid #56A7A7;
     margin:20px;
     padding-bottom: 10px;
     text-align: center;
@@ -151,7 +158,7 @@ section #ofertas ul{
 }
 
 section #ofertas ul li{
-    width: 250px;
+    width: 300px;
     float: left;
     padding:0 0 0 5px;
 }
@@ -180,15 +187,41 @@ section #ofertas ul li{
 }
 
 
+#ofertas input[type=button]{
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 14px 20px;
+    border: 2px solid #4CAF50;
+}
+
+/*
+#ofertas input[type=button]:hover{
+    border: 2px solid lightcoral;
+}*/
+
+#ofertas input[type=button]:focus{
+    outline: none;
+    border: 2px solid lightcoral;
+}
+
+
+
 #content_login{
     text-align: center;
     width: 960px;
+}
+
+#content_login a:visited{
+    color: cornflowerblue;
 }
 
 #form_login table{
     margin: 0 auto;
     padding: 0;
     text-align: center;
+    height: 220px;
 }
 
 #form_login input, #form_signup input{
@@ -196,24 +229,35 @@ section #ofertas ul li{
     width: 200px;
     height: 30px;
     border-style:solid;
+    border-radius: 4px;
 
 }
+
+
 
 #form_login input:focus, #form_signup input:focus{
     border-color: cornflowerblue;
 }
 
-#button_login{
-    width: 10px;
-    height: 100px;
-    padding: 5px;
-    font-weight: bold;
+
+#button_login {
+    border: none;
+    color: white;
+    border-radius: 4px;
+    background-color: #008CBA;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 #button_signup{
-    width: 150px;
-    height: 100px;
-    font-weight: bold;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 #login_registrarse{
@@ -224,7 +268,7 @@ section #ofertas ul li{
 
 #login{
     width: 500px;
-    height: 300px;
+    height: 330px;
     margin:0 230px;
 }
 
@@ -384,15 +428,17 @@ padding-left: 150px;
 footer{
     width: 960px;
     height: 60px;
-    color: #1e1d1c;
+    color: #000000;
     text-align: left;
     font-size: 14pt;
+    background-color: #56A7A7;
+    margin-bottom: 30px;
 }
 
 
 #social{
     width: 960px;
-    margin:5px;
+    margin:10px;
 }
 
 #social ul{
