@@ -5,31 +5,41 @@
     <title>Pago</title>
     <link rel="stylesheet" type="text/css" href="css/estilos.css" title="style" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" title="style"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
     <script type="application/javascript" src="js/eventos.js"></script>
 
 </head>
 <body>
+
 <div id="contenedor">
     <header>
         <div id="logotipo">
             <a href="index.html">
-                <img src="images/logo_header.png" href="index.html"> </a>
+                <img src="images/logo.png">
+            </a>
+            <span>Florish y Blotts</span>
         </div>
 
-        <nav>
-             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="producto.html">Productos</a></li>
-                <li><a href="about.html">Acerca de</a></li>
-            </ul>
-        </nav>
-
-         <div id="perfil">
-            <img id="usuario" src="images/user.png">
+        <div id="perfil">
             <div id="nombre_usuario"></div>
-             <a href="shopping_list.html"><img id="carrito" src="images/carrito.png"></a>
+            <a href="login.html"><img id="usuario" src="images/user.png"></a>
+            <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
         </div>
     </header>
+
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="producto.html">Productos</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <!-- Fin de header -->
+
     <section id="content_pago">
         <form id="form-pago">
         <div id="pago-contenido">
@@ -400,8 +410,11 @@
         </div>
             <input type="submit" id="comprar" value="Confirm" align="center">
         </form>
+
     </section>
-    <div id="pie">
+
+    <!-- Footer -->
+    <hr>
         <footer>
             <div id="social">
                 <ul id="red_social">
@@ -411,11 +424,10 @@
             </div>
 
             <div id="derechos">
-                <small>Derechos reservados &copy; 2017 Librería Flourish y Blotts</small>
+                <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
             </div>
 
         </footer >
-    </div>
 </div>
 </body>
 </html>
