@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title>Inicio</title>
     <link rel="stylesheet" href="css/estilos.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/resize.css" type="text/css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="application/javascript" src="js/eventos.js"></script>
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div class="defaultbody">
     <div id="contenedor">
         <header>
             <div id="logotipo">
@@ -24,17 +26,17 @@
                 <a href="login.html"><img id="usuario" src="images/user.png"></a>
                 <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
             </div>
+            <a id="menu_button"></a>
         </header>
-
-        <hr>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="producto.html">Productos</a></li>
-                <li><a href="about.html">Acerca de</a></li>
-            </ul>
-        </nav>
-        <hr>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="producto.html">Productos</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+        </ul>
+    </nav>
+    <hr>
 
         <!-- Fin de header -->
 
@@ -73,23 +75,22 @@
 
             </article>
         </section>
-
-        <!-- Footer -->
-        <hr>
-        <footer>
-            <div id="social">
-                <ul id="red_social">
-                    <li><a href="#" title="facebook"><img src="images/facebook.png"></a></li>
-                    <li><a href="#" title="twitter"><img src="images/twitter.png"></a></li>
-                </ul>
-            </div>
+    <!-- Footer -->
+<footer>
+    <hr>
+        <div id="social">
+            <ul id="red_social">
+                <li><a href="#" title="facebook"><img src="images/facebook.png"></a></li>
+                <li><a href="#" title="twitter"><img src="images/twitter.png"></a></li>
+            </ul>
+        </div>
 
             <div id="derechos">
                 <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
             </div>
 
         </footer >
-    </div></div>
+    </div>
 <div class="alertingdivbg"  style="display: none">
     <div class="alertingdiv"></div>
 </div>

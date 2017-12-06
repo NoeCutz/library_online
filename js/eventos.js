@@ -22,6 +22,23 @@ window.onload = function () {
     eventProfile();
     init();
 
+    $("#menu_button").click(function () {
+        menu_class = $("nav ul").attr("class");
+
+
+        if(menu_class != undefined){
+            if(menu_class.indexOf("visible")>-1){
+                $("nav ul").removeClass("visible");
+            }else{
+
+                $("nav ul").addClass("visible");
+            }
+        }else{
+            $("nav ul").addClass("visible");
+        }
+    });
+
+
     var table_shopping = document.getElementById("shopping_cart");
     var pagos = document.getElementById("content_pago");
     if(table_shopping !=  undefined){
@@ -35,12 +52,33 @@ window.onload = function () {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
             if (sessionStorage.username) {
-                logout();
+                location.href = "profile.html";
             } else {
-                location.href = "login.html"
+                location.href = "login.html";
             }
 
         }
+    }
+
+    var content_profile = document.getElementById("content_profile");
+    if(content_profile != undefined){
+        showDataUser();
+
+
+        $("#button_logout").click(function () {
+            logout();
+        });
+
+        $("#button_update_password").click(function () {
+            $("#new_password").show();
+            $("#new_password_repeat").show();
+            $(this).val("Actualizar");
+        });
+
+        $("#new_password").hide();
+        $("#new_password_repeat").hide();
+
+
     }
 
     function init() {
@@ -135,16 +173,8 @@ function login(form){
 }
 
 function logout() {
-    var answer = confirm("¿Desea cerrar su sesión?");
-
-
-    if(answer){
         sessionStorage.removeItem("username");
-        alert("Tu sesion se ha cerrado");
         location.href = "login.html"
-    }
-
-
 }
 
 
@@ -178,6 +208,41 @@ function signup(form) {
     saveUser(form);
     return true;
 
+}
+
+
+function updatePassword(form) {
+    var contrasena = form["password_profile"].value;
+    var contrasena_repeat = form["password_repeat_profile"].value;
+    var user = form["user_profile"].value;
+
+    var content_valid = document.getElementById("validacion_update");
+
+    if(contrasena != contrasena_repeat){
+        contrasena.value = "";
+        contrasena_repeat.value = "";
+        content_valid.innerHTML = "Contraseñas no coinciden";
+        return false;
+    }
+
+    var userUpdate;
+    var indexUser;
+
+    for (i=0; i<jsonUsers.users.length;i++){
+        if( jsonUsers.users[i].user == user ){
+            userUpdate= jsonUsers.users[i];
+            indexUser = i;
+        }
+
+    }
+
+    userUpdate.password = contrasena;
+
+   console.log("userUpdate", userUpdate);
+
+    jsonUsers.users.splice(indexUser,1,userUpdate);
+
+    localStorage.setItem("users", JSON.stringify(jsonUsers));
 }
 
 
@@ -217,6 +282,24 @@ function existsTelephone(telephone) {
     }
     return false;
 }
+
+
+function showDataUser() {
+    var user;
+
+    for (i=0; i<jsonUsers.users.length;i++){
+        if(jsonUsers.users[i].user == sessionStorage.username){
+            user = jsonUsers.users[i];
+        }
+    }
+    document.getElementById("user_profile").value = user.user;
+    document.getElementById("name_profile").value = user.name;
+    document.getElementById("email_profile").value = user.email;
+    document.getElementById("telephone_profile").value = user.telephone;
+
+
+}
+
 
 //Shopping list
 

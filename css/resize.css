@@ -1,0 +1,171 @@
+@media only screen and (max-width: 480px) , only screen and (max-device-width: 480px) {
+
+    #contenedor{
+        margin:5px 5px;
+        position:relative;
+        text-align:center;
+        width: 240px;
+        padding: 0 0px;
+    }
+
+
+    /*Header*/
+    header{
+        margin: 0 0;
+        width: 240px;
+        font-size: 16px;
+        height:60px;
+    }
+
+    header #logotipo{
+        position: relative;
+        width: 140px;
+        margin: 0;
+        float: none;
+    }
+
+    header #logotipo img{
+        width: 50px;
+        padding: 10px 10px;
+    }
+
+    header #logotipo span{
+        width: 90px;
+        margin: 5px 0px;
+        font-size: 14px;
+    }
+
+    header #perfil{
+        margin: 10px 0;
+        width: 50px;
+        right: 5px;
+    }
+
+    header #perfil img{
+        width: 20px;
+    }
+
+    /*Menu*/
+
+
+    header #menu_button::before{
+        top: 35px;
+        right: 10px;
+        float: right;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        display: block;
+        content:"☰";
+        font-size:16px;
+        color:white;
+        border-radius:3px;
+        background-color: #142b25;
+    }
+
+    nav{
+        width: 240px;
+    }
+
+    nav ul{
+        display: none;
+        padding: 0px;
+        width: 100px;
+        height: auto;
+        text-align: center;
+    }
+
+    nav ul li{
+        width: 60px;
+    }
+
+    nav ul li a{
+        color: #000000;
+        text-decoration: none;
+        padding: 10px 0px;
+        text-align: center;
+        font-size: 13px;
+        width: 100px;
+    }
+
+    nav ul.visible{
+        display: block;
+    }
+
+
+
+    /*contenido index*/
+
+
+    section #presentacion {
+        margin: 0 0;
+        width: 240px;
+        height: 180px;
+        text-align: center;
+        position: relative;
+
+    }
+
+    section #presentacion video{
+        margin: 0;
+        width: 200px;
+        height: 150px;
+    }
+
+
+    section #ofertas{
+        position: relative;
+        margin: 3px 3px;
+        width: 230px;
+        height: 500px;
+    }
+
+
+    section #ofertas ul li{
+        width: 150px;
+        height: 150px;
+        padding:0 5px 0 5px;
+        text-align: center;
+        margin: 0 5px;
+    }
+
+    #ofertas ul li img{
+        width:50px;
+        height: 50px;
+    }
+
+    #ofertas ul li #title_oferta{
+        font-weight: bold;
+        width: 30px;
+    }
+
+    #ofertas ul li #valoracion{
+        width: 30px;
+    }
+
+    #ofertas ul li #precio{
+        font-size: 12pt;
+        width: 30px;
+    }
+
+    #ofertas input[type=button]{
+        height: 40px;
+        width: 150px;
+        padding: 0 0;
+    }
+
+
+
+    /*Footer*/
+
+    footer{
+        margin: 0 0;
+        width: 240px;
+        height: 70px;
+    }
+
+    footer #derechos{
+        width: 240px;
+        font-size: 12px;
+    }
+}
