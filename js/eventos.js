@@ -43,6 +43,22 @@ window.onload = function () {
     var content_profile = document.getElementById("content_profile");
     if(content_profile != undefined){
         showDataUser();
+
+
+        $("#button_logout").click(function () {
+            logout();
+        });
+
+        $("#button_update_password").click(function () {
+            $("#new_password").show();
+            $("#new_password_repeat").show();
+            $(this).val("Actualizar");
+        });
+
+        $("#new_password").hide();
+        $("#new_password_repeat").hide();
+
+
     }
 
     function init() {
@@ -132,16 +148,8 @@ function login(form){
 }
 
 function logout() {
-    var answer = confirm("¿Desea cerrar su sesión?");
-
-
-    if(answer){
         sessionStorage.removeItem("username");
-        alert("Tu sesion se ha cerrado");
         location.href = "login.html"
-    }
-
-
 }
 
 
@@ -175,6 +183,41 @@ function signup(form) {
     saveUser(form);
     return true;
 
+}
+
+
+function updatePassword(form) {
+    var contrasena = form["password_profile"].value;
+    var contrasena_repeat = form["password_repeat_profile"].value;
+    var user = form["user_profile"].value;
+
+    var content_valid = document.getElementById("validacion_update");
+
+    if(contrasena != contrasena_repeat){
+        contrasena.value = "";
+        contrasena_repeat.value = "";
+        content_valid.innerHTML = "Contraseñas no coinciden";
+        return false;
+    }
+
+    var userUpdate;
+    var indexUser;
+
+    for (i=0; i<jsonUsers.users.length;i++){
+        if( jsonUsers.users[i].user == user ){
+            userUpdate= jsonUsers.users[i];
+            indexUser = i;
+        }
+
+    }
+
+    userUpdate.password = contrasena;
+
+   console.log("userUpdate", userUpdate);
+
+    jsonUsers.users.splice(indexUser,1,userUpdate);
+
+    localStorage.setItem("users", JSON.stringify(jsonUsers));
 }
 
 
@@ -222,12 +265,9 @@ function showDataUser() {
     for (i=0; i<jsonUsers.users.length;i++){
         if(jsonUsers.users[i].user == sessionStorage.username){
             user = jsonUsers.users[i];
-            console.log("user")
         }
     }
-
-    console.log(user);
-    document.getElementById("usuario_profile").value = user.user;
+    document.getElementById("user_profile").value = user.user;
     document.getElementById("name_profile").value = user.name;
     document.getElementById("email_profile").value = user.email;
     document.getElementById("telephone_profile").value = user.telephone;

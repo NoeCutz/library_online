@@ -112,12 +112,16 @@ header #perfil{
     float: right;
     top: 15px;
     margin-top: 15px;
+
 }
 
-header #perfil #usuario img{
+header #perfil img{
     width: 20%;
 }
 
+header #perfil a{
+    cursor: pointer;
+}
 header #perfil #nombre_usuario{
     color: #FCEA90;
     text-align: left;
@@ -188,12 +192,16 @@ section #ofertas ul li{
 
 
 #ofertas input[type=button]{
-    background-color: white;
-    color: black;
-    font-size: 14px;
+    border: none;
+    color: white;
+    height: 40px;
     border-radius: 4px;
-    padding: 14px 20px;
-    border: 2px solid #4CAF50;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 /*
@@ -220,8 +228,7 @@ section #ofertas ul li{
 #form_login table{
     margin: 0 auto;
     padding: 0;
-    text-align: center;
-    height: 220px;
+    height: 250px;
 }
 
 #form_login input, #form_signup input{
@@ -241,8 +248,10 @@ section #ofertas ul li{
 
 
 #button_login {
+    margin: 0;
     border: none;
     color: white;
+    height: 40px;
     border-radius: 4px;
     background-color: #008CBA;
     text-align: center;
@@ -263,6 +272,7 @@ section #ofertas ul li{
 #login_registrarse{
     padding-bottom: 5px;
     width: 100px;
+    height: 100px;
 }
 
 
@@ -283,6 +293,74 @@ section #ofertas ul li{
     margin:0 230px;
 }
 
+/*============Perfil===============*/
+
+
+#content_profile{
+    text-align: center;
+    width: 960px;
+}
+
+#form_profile table{
+    margin: 0 auto;
+    padding: 0;
+    height: 400px;
+}
+
+#logout{
+    height: 45px;
+}
+
+
+#button_update{
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#button_update_password{
+    margin: 0;
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#button_logout{
+    float: right;
+    margin-right: 40px;
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#f44336;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#validacion_update{
+    height: 30px;
+    color: red;
+}
+
+
+/*======Productos=============*/
 #prod-lateral { float: left; width: 17%; }
 
 

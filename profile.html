@@ -5,6 +5,7 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="css/estilos.css" type="text/css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="application/javascript" src="js/eventos.js"></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
         </div>
 
         <div id="perfil">
-            <a href="login.html"><img id="usuario" src="images/user.png"></a>
+            <a><img id="usuario" src="images/user.png"></a>
             <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
             <div id="nombre_usuario"></div>
         </div>
@@ -41,7 +42,11 @@
         <section id="content_profile">
             <div id="profile">
                 <h2>Perfil</h2>
-                <form id="form_profile" method="post" action="profile.html" onsubmit="return update(this);">
+                <div id="logout">
+                    <button id="button_logout">Cerrar Sesión</button>
+                </div>
+
+                <form id="form_profile" method="post"  onsubmit="return updatePassword(this);">
                     <table>
                         <tr>
                             <td colspan="2" id="validacion_update"></td>
@@ -50,32 +55,45 @@
                             <td>
                                 Usuario:
                             </td>
-                            <td><input name="usuario_profile" id="usuario_profile" type="text" required="required" readonly="readonly"></td>
+                            <td><input name="user_profile" id="user_profile" type="text" readonly="readonly"></td>
                         </tr>
                         <tr>
                             <td>
                                 Nombre:
                             </td>
-                            <td><input name="name_profile" id="name_profile" type="text" required="required"></td>
+                            <td><input name="name_profile" id="name_profile" required type="text" readonly="readonly"></td>
                         </tr>
 
                         <tr>
                             <td>
                                 Correo electrónico:
                             </td>
-                            <td><input name="email_profile" id="email_profile" type="email" required="required"></td>
+                            <td><input name="email_profile" id="email_profile"  required type="email" readonly="readonly"></td>
                         </tr>
 
                         <tr>
                             <td>
                                 Telefono:
                             </td>
-                            <td><input name="telephone_profile" id="telephone_profile" type="tel" required="required" pattern="[0-9]{10}"></td>
+                            <td><input name="telephone_profile" id="telephone_profile" required type="tel"  pattern="[0-9]{10}" readonly="readonly"></td>
                         </tr>
+                        <tr id="new_password">
+                                <td>
+                                    Nueva Contraseña:
+                                </td>
+                            <td><input name="password_profile" id="password_profile" type="password" required ></td>
+                        </tr>
+
+                            <tr id="new_password_repeat">
+                                <td>
+                                    Repite la contraseña:
+                                </td>
+                                <td><input name="password_repeat_profile" id="password_repeat_profile" required type="password"></td>
+                            </tr>
 
                         <tr>
                             <td colspan="2">
-                                <input id="button_update" type="submit" value="Actualizar">
+                                <input id="button_update_password" type="submit" value="Cambiar contraseña">
                             </td>
                         </tr>
 
