@@ -19,19 +19,17 @@ header, nav, section, aside, footer{
     clear:both;
 }
 
-body{
-    margin:30px auto 0;
-    position:relative;
-    text-align:left;
-    width:960px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-family: 'Lato', sans-serif;
-}
+
 
 
 #contenedor{
     width: 960px;
+    margin:30px auto 0;
+    position:relative;
+    text-align:left;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Lato', sans-serif;
 }
 
 /*=====================================
@@ -127,10 +125,6 @@ header #perfil #nombre_usuario{
     text-align: left;
 }
 
-
-header #perfil #carrito img{
-    width: 20%;
-}
 
 /*=====================================
 	Manejo del contenido
@@ -535,3 +529,4 @@ footer{
     margin: 0 30px 0 10px;
     padding: 0 30px 0 0;
 }
+
