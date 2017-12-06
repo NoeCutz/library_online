@@ -3,7 +3,7 @@
     #contenedor{
         margin:5px 5px;
         position:relative;
-        text-align:left;
+        text-align:center;
         width: 240px;
         padding: 0 0px;
     }
@@ -18,7 +18,7 @@
     }
 
     header #logotipo{
-        position: fixed;
+        position: relative;
         width: 150px;
     }
 
@@ -67,13 +67,16 @@
 
 
     section #ofertas{
+        position: relative;
         margin: 3px 3px;
         width: 230px;
+        height: 500px;
     }
 
 
     section #ofertas ul li{
         width: 150px;
+        height: 150px;
         float: left;
         padding:0 0 0 5px;
     }
@@ -105,5 +108,14 @@
 
     /*Footer*/
 
+    footer{
+        margin: 0 0;
+        width: 240px;
+        height: 70px;
+    }
 
+    footer #derechos{
+        width: 240px;
+        font-size: 12px;
+    }
 }
