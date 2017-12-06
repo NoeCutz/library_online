@@ -5,89 +5,93 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="css/estilos.css" type="text/css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="application/javascript" src="js/eventos.js"></script>
 </head>
 <body>
+<div class="defaultbody">
+    <div id="contenedor">
+        <header>
+            <div id="logotipo">
+                <a href="index.html">
+                    <img src="images/logo.png">
+                </a>
+                <span>Florish y Blotts</span>
+            </div>
 
-<div id="contenedor">
-    <header>
-        <div id="logotipo">
-            <a href="index.html">
-            <img src="images/logo.png">
-            </a>
-            <span>Florish y Blotts</span>
-        </div>
+            <div id="perfil">
+                <div id="nombre_usuario"></div>
+                <a href="login.html"><img id="usuario" src="images/user.png"></a>
+                <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
+            </div>
+        </header>
 
-        <div id="perfil">
-            <div id="nombre_usuario"></div>
-            <a href="login.html"><img id="usuario" src="images/user.png"></a>
-            <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
-        </div>
-    </header>
-
-    <hr>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="producto.html">Productos</a></li>
-            <li><a href="about.html">Acerca de</a></li>
-        </ul>
-    </nav>
-    <hr>
-
-    <!-- Fin de header -->
-
-    <section>
-    <article id="presentacion">
-        <video src="videos/Anuncio_Fomento_a_la_lectura.mp4" controls="controls"></video>
-    </article>
-    <article id="ofertas">
-        <h3>Ofertas</h3>
-        <ul>
-            <li>
-                <img src="images/products/book_it.jpg">
-                <span id="title_oferta_1" class="bookName">It</span>
-                <div id="valoracion_1">
-                </div>
-                Precio: $<span id="precio_1" class="bookPrice">399.50</span>
-                <input type="button" class="addBook" value="Agregar al carrito" onclick="addToCart_I(this)">
-            </li>
-            <li>
-                <img src="images/products/book_before.jpg">
-                <span id="title_oferta_2" class="bookName">Before i fall</span>
-                <div id="valoracion_2">
-                </div>
-                Precio: $<span id="precio_2" class="bookPrice">215.00</span>
-                <input type="button" class="addBook" value="Agregar al carrito" onclick="addToCart_I(this)">
-            </li>
-            <li>
-                <img src="images/products/book_legado.jpg">
-                <span id="title_oferta_3" class="bookName">Harry Potter y el Legado Maldito</span>
-                <div id="valoracion_3">
-                </div>
-                Precio: $<span id="precio_3" class="bookPrice">279.00</span>
-                <input type="button" class="addBook" value="Agregar al carrito" onclick="addToCart_I(this)">
-            </li>
-        </ul>
-
-    </article>
-</section>
-
-    <!-- Footer -->
-    <hr>
-<footer>
-        <div id="social">
-            <ul id="red_social">
-                <li><a href="#" title="facebook"><img src="images/facebook.png"></a></li>
-                <li><a href="#" title="twitter"><img src="images/twitter.png"></a></li>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Productos</a></li>
+                <li><a href="about.html">Acerca de</a></li>
             </ul>
-        </div>
+        </nav>
+        <hr>
 
-        <div id="derechos">
-            <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
-        </div>
+        <!-- Fin de header -->
 
-    </footer >
+        <section>
+            <article id="presentacion">
+                <video src="videos/Anuncio_Fomento_a_la_lectura.mp4" controls="controls"></video>
+            </article>
+            <article id="ofertas">
+                <h3>Ofertas</h3>
+                <ul>
+                    <li>
+                        <img src="images/products/book_it.jpg">
+                        <span id="title_oferta_1" class="bookName">It</span>
+                        <div id="valoracion_1">
+                        </div>
+                        Precio: $<span id="precio_1" class="bookPrice">399.50</span>
+                        <input type="button" class="addBook" value="Agregar al carrito" onclick="addToCart_I(this)">
+                    </li>
+                    <li>
+                        <img src="images/products/book_before.jpg">
+                        <span id="title_oferta_2" class="bookName">Before i fall</span>
+                        <div id="valoracion_2">
+                        </div>
+                        Precio: $<span id="precio_2" class="bookPrice">215.00</span>
+                        <input type="button" class="addBook" value="Agregar al carrito" onclick="addToCart_I(this)">
+                    </li>
+                    <li>
+                        <img src="images/products/book_legado.jpg">
+                        <span id="title_oferta_3" class="bookName">Harry Potter y el Legado Maldito</span>
+                        <div id="valoracion_3">
+                        </div>
+                        Precio: $<span id="precio_3" class="bookPrice">279.00</span>
+                        <input type="button" class="addBook" value="Agregar al carrito" onclick="addToCart_I(this)">
+                    </li>
+                </ul>
+
+            </article>
+        </section>
+
+        <!-- Footer -->
+        <hr>
+        <footer>
+            <div id="social">
+                <ul id="red_social">
+                    <li><a href="#" title="facebook"><img src="images/facebook.png"></a></li>
+                    <li><a href="#" title="twitter"><img src="images/twitter.png"></a></li>
+                </ul>
+            </div>
+
+            <div id="derechos">
+                <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
+            </div>
+
+        </footer >
+    </div></div>
+<div class="alertingdivbg"  style="display: none">
+    <div class="alertingdiv"></div>
 </div>
 </body>
 </html>

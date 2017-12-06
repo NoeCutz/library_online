@@ -241,12 +241,16 @@ function addToCart_P() {
     var name = document.getElementById("titulo").innerHTML;
     var price=document.getElementById("prod-precio").innerHTML;
     addToCart(name,price);
+    showAlertDiv(name,price);
+    
 }
 function addToCart_I(item) {
     var node= item.parentNode;
     var name= node.getElementsByClassName("bookName")[0].innerHTML;
     var price = node.getElementsByClassName("bookPrice")[0].innerHTML;
     addToCart(name,price);
+    showAlertDiv(name,price);
+
 }
 
 function loadPayment() {
@@ -286,4 +290,12 @@ function loadPayment() {
 
 
     document.getElementById("total-prods").innerHTML="$ " +  total.toFixed(2).toString();
+}
+
+function showAlertDiv(name, price) {
+    $(".alertingdivbg").show();
+    $(".alertingdiv")[0].innerHTML = "<span>Se a&ntildeadio: <br><b> " +name + "</b> por  <b>$" + price + " </b><br> al carrito</span>"
+    setTimeout(function () {
+        $(".alertingdivbg").hide();
+    },1000)
 }
