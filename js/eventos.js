@@ -22,6 +22,23 @@ window.onload = function () {
     eventProfile();
     init();
 
+    $("#menu_button").click(function () {
+        menu_class = $("nav ul").attr("class");
+
+
+        if(menu_class != undefined){
+            if(menu_class.indexOf("visible")>-1){
+                $("nav ul").removeClass("visible");
+            }else{
+
+                $("nav ul").addClass("visible");
+            }
+        }else{
+            $("nav ul").addClass("visible");
+        }
+    });
+
+
     var table_shopping = document.getElementById("shopping_cart");
 
     if(table_shopping !=  undefined){
