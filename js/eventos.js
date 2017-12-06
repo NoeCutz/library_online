@@ -23,11 +23,14 @@ window.onload = function () {
     init();
 
     var table_shopping = document.getElementById("shopping_cart");
-
+    var pagos = document.getElementById("content_pago");
     if(table_shopping !=  undefined){
         loadCart()
     }
 
+    if(pagos !== undefined && pagos !== null){
+        loadPayment();
+    }
     function eventProfile() {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
@@ -74,6 +77,11 @@ window.onload = function () {
         }
         showTotal(numItems);
     }
+
+
+
+
+
 
     function addElementsToBody(element) {
         var inserElementCode = "<tr><td>" +element[0]+"</td>";
@@ -239,4 +247,43 @@ function addToCart_I(item) {
     var name= node.getElementsByClassName("bookName")[0].innerHTML;
     var price = node.getElementsByClassName("bookPrice")[0].innerHTML;
     addToCart(name,price);
+}
+
+function loadPayment() {
+    var keys= Object.keys(sessionStorage);
+    var numItems = 0;
+    var total=0;
+
+
+    for (var i=0; i<keys.length; i++){
+
+        if(keys[i] != "username") {
+            var element= JSON.parse(sessionStorage.getItem(keys[i]));
+            total += parseFloat(element[1]);
+            numItems++;
+        }
+
+    }
+
+    document.getElementById("cantidad-prods").innerHTML=numItems.toString();
+    total.toFixed(2);
+    document.getElementById("costo-prods").innerHTML="$ " +  total.toFixed(2).toString();
+
+
+    var radios = document.getElementsByName('forma-envio');
+
+    for (var i = 0, length = radios.length; i < length; i++)
+    {
+        if (radios[i].checked)
+        {
+           var  envio = parseFloat(radios[i].value);
+            document.getElementById("costo-envio").innerHTML="$ "+ envio.toFixed(2);
+            total += parseFloat(envio);
+            break;
+        }
+    }
+
+
+
+    document.getElementById("total-prods").innerHTML="$ " +  total.toFixed(2).toString();
 }
