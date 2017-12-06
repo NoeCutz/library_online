@@ -63,15 +63,20 @@
         background-color: #142b25;
     }
 
+    nav{
+        width: 240px;
+    }
+
     nav ul{
         display: none;
         padding: 0px;
         width: 100px;
+        height: auto;
         text-align: center;
     }
 
     nav ul li{
-        width: 100px;
+        width: 60px;
     }
 
     nav ul li a{
@@ -80,6 +85,7 @@
         padding: 10px 0px;
         text-align: center;
         font-size: 13px;
+        width: 100px;
     }
 
     nav ul.visible{

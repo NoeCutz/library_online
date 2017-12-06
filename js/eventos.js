@@ -40,11 +40,14 @@ window.onload = function () {
 
 
     var table_shopping = document.getElementById("shopping_cart");
-
+    var pagos = document.getElementById("content_pago");
     if(table_shopping !=  undefined){
         loadCart()
     }
 
+    if(pagos !== undefined && pagos !== null){
+        loadPayment();
+    }
     function eventProfile() {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
@@ -112,6 +115,11 @@ window.onload = function () {
         }
         showTotal(numItems);
     }
+
+
+
+
+
 
     function addElementsToBody(element) {
         var inserElementCode = "<tr><td>" +element[0]+"</td>";
@@ -302,6 +310,7 @@ function deleteElement(button) {
     location.reload();
 }
 
+
 function emptyCart() {
     sessionStorage.clear();
     location.reload();
@@ -315,10 +324,61 @@ function addToCart_P() {
     var name = document.getElementById("titulo").innerHTML;
     var price=document.getElementById("prod-precio").innerHTML;
     addToCart(name,price);
+    showAlertDiv(name,price);
+    
 }
 function addToCart_I(item) {
     var node= item.parentNode;
     var name= node.getElementsByClassName("bookName")[0].innerHTML;
     var price = node.getElementsByClassName("bookPrice")[0].innerHTML;
     addToCart(name,price);
+    showAlertDiv(name,price);
+
+}
+
+function loadPayment() {
+    var keys= Object.keys(sessionStorage);
+    var numItems = 0;
+    var total=0;
+
+
+    for (var i=0; i<keys.length; i++){
+
+        if(keys[i] != "username") {
+            var element= JSON.parse(sessionStorage.getItem(keys[i]));
+            total += parseFloat(element[1]);
+            numItems++;
+        }
+
+    }
+
+    document.getElementById("cantidad-prods").innerHTML=numItems.toString();
+    total.toFixed(2);
+    document.getElementById("costo-prods").innerHTML="$ " +  total.toFixed(2).toString();
+
+
+    var radios = document.getElementsByName('forma-envio');
+
+    for (var i = 0, length = radios.length; i < length; i++)
+    {
+        if (radios[i].checked)
+        {
+           var  envio = parseFloat(radios[i].value);
+            document.getElementById("costo-envio").innerHTML="$ "+ envio.toFixed(2);
+            total += parseFloat(envio);
+            break;
+        }
+    }
+
+
+
+    document.getElementById("total-prods").innerHTML="$ " +  total.toFixed(2).toString();
+}
+
+function showAlertDiv(name, price) {
+    $(".alertingdivbg").show();
+    $(".alertingdiv")[0].innerHTML = "<span>Se a&ntildeadio: <br><b> " +name + "</b> por  <b>$" + price + " </b><br> al carrito</span>"
+    setTimeout(function () {
+        $(".alertingdivbg").hide();
+    },1000)
 }

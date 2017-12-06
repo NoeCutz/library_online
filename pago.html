@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Pago</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" title="style" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilos.css" title="style"/>
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
     <script type="application/javascript" src="js/eventos.js"></script>
+
 </head>
 <body>
 
-<div id="contenedor">
+<div class="defaultbody" id="contenedor">
     <header>
         <div id="logotipo">
             <a href="index.html">
@@ -336,8 +339,8 @@
                     </table>
 
             </div>
-            <div id="formas-de-envio">
-                <table>
+            <div id="formas-de-envio" onchange="loadPayment();">
+                <table >
                     <tr>
                     <td><input type="radio" name="forma-envio" value="10" ></td><td>DHL Xpress - $10</td>
                     </tr>
@@ -425,6 +428,9 @@
             </div>
 
         </footer >
+</div>
+<div class="alertingdivbg"  style="display: none">
+    <div class="alertingdiv"></div>
 </div>
 </body>
 </html>
