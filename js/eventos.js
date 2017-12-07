@@ -6,6 +6,8 @@ var jsonUsers = {};
 
 jsonUsers.users = [];
 
+var total = 0;
+
 function User(user, password, name, email, telephone, login) {
     this.user = user;
     this.password = password;
@@ -349,7 +351,7 @@ function checkStates() {
 function loadPayment() {
     var keys= Object.keys(sessionStorage);
     var numItems = 0;
-    var total=0;
+    total=0;
 
 
     for (var i=0; i<keys.length; i++){
@@ -394,9 +396,8 @@ function showAlertDiv(name, price) {
 }
 function pagar() {
     var tarjeta = $("#tarjeta").val();
-    var total = $("#total-prods").val();
         $(".alertingdivbg").show();
-        $(".alertingdiv")[0].innerHTML = "<span>Se cobraron: <br><b> " + total + "</b> en la tarjeta <br> <b>" + tarjeta + " </b> </span>"
+        $(".alertingdiv")[0].innerHTML = "<span>Se cobraron: <br><b> $" + total.toFixed(2) + "</b> en la tarjeta <br> <b>" + tarjeta + " </b> </span>"
         setTimeout(function () {
             $(".alertingdivbg").hide();
         },4000)
