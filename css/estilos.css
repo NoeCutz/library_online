@@ -53,7 +53,7 @@ header, nav, section, aside, footer{
 
 #contenedor{
     width: 960px;
-    margin:0px 15% 0 15%;
+    margin: 0px 15% 0 15%;
     position:relative;
     text-align:left;
     padding-left: 20px;
@@ -105,7 +105,8 @@ nav{
 nav ul{
     /*
     position: absolute;
-    */margin: 0 15px 0 0;
+    */
+    margin: 0 15px 0 0;
     overflow: hidden;
     list-style:none outside none;
     top: 40px;
@@ -545,6 +546,114 @@ padding-left: 150px;
 
 #cobro-contenido #pago-cobro { float: left; width: 45%; }
 #cobro-contenido #total-cobro { float: right; width: 35%; }
+
+/*==============About==========*/
+.about{
+    margin: 1em;
+    width: 80%;
+}
+
+article p{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 100%;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+/*==============shoppinglist==========*/
+
+
+
+.shopping_cart{
+    margin-top: 15px;
+}
+
+table.shopping_cart{
+    width: 80%;
+    border-spacing: 0;
+    border-collapse:collapse;
+    border-top: 1px solid #ddd;
+}
+
+.shopping_cart th, .shopping_cart td{
+    padding: .5em 1em;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.shopping_cart th{
+    color: #939B93;
+    padding: 0 10px 0 10px;
+}
+
+.shopping_cart td{
+    padding: 2px;
+}
+
+.shopping_cart tr:hover{
+    background-color: #f5f5f5
+}
+
+.shopping_cart tr:nth-child(even){
+    background-color: #f2f2f2
+}
+
+#contenido p{
+    margin: 15px;
+    font-size: 22px;
+    vertical-align: text-bottom;
+
+}
+
+#cost_total{
+    color: #fc5c3c;
+}
+
+#cart_actions{
+    list-style-type: none;
+    margin: 15px;
+}
+
+#cart_actions input{
+    position: relative;
+}
+
+#cart_actions a{
+    color: #192666;
+    padding: 15px;
+}
+
+#cart_actions a:hover{
+    color: #4F6AD7;
+}
+
+#cart_actions .btn{
+    padding: 0;
+}
+
+#cart_actions input{
+    margin: 0.25em;
+    border: none;
+    color: white;
+    height: 1.25em;
+    width: 135px;
+    border-radius: 4px;
+    background-color: #008CBA;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#cart_actions a input{
+    font-size: 30px;
+    margin: 0.25em;
+}
+
 
 
 /*=====================================
