@@ -336,6 +336,16 @@ function addToCart_I(item) {
 
 }
 
+function checkStates() {
+    var pais = $("#pais-pago").val();
+    if(pais !== "MEX"){
+        $("#estado-pago").prop('disabled', true);
+    }else{
+        $("#estado-pago").prop('disabled', false);
+
+    }
+}
+
 function loadPayment() {
     var keys= Object.keys(sessionStorage);
     var numItems = 0;
@@ -381,4 +391,14 @@ function showAlertDiv(name, price) {
     setTimeout(function () {
         $(".alertingdivbg").hide();
     },1000)
+}
+function pagar() {
+    var tarjeta = $("#tarjeta").val();
+    var total = $("#total-prods").val();
+        $(".alertingdivbg").show();
+        $(".alertingdiv")[0].innerHTML = "<span>Se cobraron: <br><b> " + total + "</b> en la tarjeta <br> <b>" + tarjeta + " </b> </span>"
+        setTimeout(function () {
+            $(".alertingdivbg").hide();
+        },4000)
+    emptyCart();
 }

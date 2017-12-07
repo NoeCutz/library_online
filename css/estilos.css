@@ -13,11 +13,11 @@ hr{
 }
 
 .alertingdivbg{
-    position: absolute; !important;
-    width: 100%; height: 100%; !important;
+    position: fixed; !important;
+    width: 200%; height: 200%; !important;
     padding-top: 20%;
     background-color: rgba(0, 0, 0, 0.47);
-    padding-left: 33%;
+    padding-left: 45%;
     top:0; right:0;
     bottom:0; left:0;
     font-family: 'Lato', sans-serif, bold ;
@@ -25,17 +25,18 @@ hr{
 
 body .alertingdiv{
     background-color: white;
-    width:30%;
-    height: 20%;
-    border: 30px;
+    padding-top: 2.5%;
+    width: 16%;
+    height: 18%;
+    border: 15px;
     align-items: center;
     align-content: center;
     text-align: center;
-    padding-top: 5%;
+
 
  }
 
-body .alertingdiv span {
+#contenedor .alertingdiv span {
     align-items: center;
     align-content: center;
     text-align: center;
@@ -52,7 +53,7 @@ header, nav, section, aside, footer{
 
 #contenedor{
     width: 960px;
-    margin:30px auto 0;
+    margin:0px 15% 0 15%;
     position:relative;
     text-align:left;
     padding-left: 20px;
@@ -323,6 +324,10 @@ section #ofertas ul li{
     text-align: center;
     width: 960px;
 }
+#content_prod{
+    text-align: center;
+    width: 960px;
+}
 
 #form_profile table{
     margin: 0 auto;
@@ -396,7 +401,7 @@ section #ofertas ul li{
 
 div.prod-stars {
     padding: 7px;
-    width: 270px;
+    width: 100%;
     display: inline-block;
     align-content: left;
 }
@@ -405,7 +410,7 @@ input.prod-star { display: none; }
 
 label.prod-star {
     align-content: right;
-    font-size: 40px;
+    font-size: 30px;
     color: #444;
     transition: all .2s;
 }
@@ -448,7 +453,9 @@ padding-left: 150px;
     font-weight: bold;
     font-family: "Verdana";
 }
-
+#content_pago{
+    width:960px;
+}
 #pago-contenido{
     padding: 10px;
     width:  100%;
@@ -488,10 +495,21 @@ padding-left: 150px;
 }
 
 #formas-de-envio input[type=radio]{
+
+    height: 30px;
+    border-style:solid;
+    border-radius: 4px;
 }
 
 #pago-cobro input[type=number]{
-    width: 70%;
+    width: 80%;
+}
+
+#content_pago input{
+
+    height: 30px;
+    border-style:solid;
+    border-radius: 4px;
 }
 
 #total-calc{
@@ -502,7 +520,11 @@ padding-left: 150px;
     border-top: 1pt solid black;
 
 }
-#pago-contenido select{
+#content_pago select{
+
+    height: 30px;
+    border-style:solid;
+    border-radius: 4px;
     max-width: 40%;
 }
 #pago-contenido #direccion-envio { float: left; width: 45%; }
@@ -533,7 +555,7 @@ footer{
     text-align: left;
     font-size: 14pt;
     background-color: #56A7A7;
-    margin-bottom: 30px;
+   margin-bottom: 30px;
 }
 
 
