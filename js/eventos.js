@@ -332,6 +332,7 @@ function addToCart_I(item) {
     var name= node.getElementsByClassName("bookName")[0].innerHTML;
     var price = node.getElementsByClassName("bookPrice")[0].innerHTML;
     addToCart(name,price);
+    showAlertDiv(name,price);
 }
 
 //Geolocation
@@ -372,10 +373,6 @@ function initMap() {
 }
 
 //End geolocation
-
-    showAlertDiv(name,price);
-
-}
 
 function checkStates() {
     var pais = $("#pais-pago").val();
