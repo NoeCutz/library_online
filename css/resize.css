@@ -4,7 +4,7 @@
         margin:5px 5px;
         position:relative;
         text-align:center;
-        width: 240px;
+        width: 380px;
         padding: 0;
     }
 
@@ -12,9 +12,9 @@
     /*Header*/
     header{
         margin: 0 0;
-        width: 240px;
+        width: 380px;
         font-size: 16px;
-        height:60px;
+        height:80px;
     }
 
     header #logotipo{
@@ -49,7 +49,7 @@
 
 
     header #menu_button::before{
-        top: 35px;
+        top: 55px;
         right: 10px;
         float: right;
         position: absolute;
@@ -64,7 +64,7 @@
     }
 
     nav{
-        width: 240px;
+        width: 380px;
     }
 
     nav ul{
@@ -99,7 +99,7 @@
 
     section #presentacion {
         margin: 0 0;
-        width: 240px;
+        width: 380px;
         height: 180px;
         text-align: center;
         position: relative;
@@ -116,7 +116,7 @@
     section #ofertas{
         position: relative;
         margin: 3px 3px;
-        width: 230px;
+        width: 380px;
         height: 500px;
     }
 
@@ -155,17 +155,51 @@
     }
 
 
+    /*contenido de login*/
+
+    #content_login, #content_profile,{
+        margin: 0 0;
+        width: 240px;
+        text-align: center;
+        position: relative;
+    }
+
+    div#login, div#profile, div#signup{
+        margin: 0 0;
+        width: 240px;
+    }
+
+    #form_login, #form_signup{
+        width: 240px;
+    }
+
+    #form_login table{
+        margin: 0 auto;
+        padding: 0;
+        height: 240px;
+    }
+
+
+    #form_login input, #form_signup input{
+        margin: 0 0;
+        width: 100px;
+        height: 30px;
+        border-style:solid;
+        border-radius: 4px;
+
+    }
+
 
     /*Footer*/
 
     footer{
         margin: 0 0;
-        width: 240px;
+        width: 380px;
         height: 70px;
     }
 
     footer #derechos{
-        width: 240px;
+        width: 380px;
         font-size: 12px;
     }
 }

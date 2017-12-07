@@ -4,6 +4,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing:border-box;
 }
 
 .alertingdivbg{
@@ -46,16 +47,18 @@ header, nav, section, aside, footer{
 }
 
 body{
-    padding: 1em;
-    text-align:left;
-    max-width: 60em;
-    font-family: 'Lato', sans-serif;
-    margin: auto;
+    background-color: #F9FBFC;
 }
 
 
 #contenedor{
     width: 960px;
+    margin: 0px 15% 0 15%;
+    position:relative;
+    text-align:left;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Lato', sans-serif;
 }
 
 /*=====================================
@@ -63,9 +66,9 @@ body{
 =======================================*/
 
 header{
-    max-width: 60em;
+    width: 960px;
     height:100px;
-    color: #FCEA90;
+    color: #F9FBFC;
     background-color: #56A7A7;
     justify-content: space-between;
     align-items: center;
@@ -102,15 +105,17 @@ header{
 nav{
     font-size: 14pt;
     font-family: 'Lora', serif;
-    width: 100%;
-    text-align: center;
     background-color: #A0DBDB;
+    width: 960px;
+    text-align: center;
 }
 
 nav ul{
-    margin: auto;
+    margin: 0 15px 0 0;
     overflow: hidden;
     list-style:none outside none;
+    top: 40px;
+    right: 150px;
 }
 
 nav ul li{
@@ -126,10 +131,10 @@ nav ul li{
     text-align: center;
 }
 
-nav li a{
-    color: black;
+nav li a {
+    color: #000000;
     text-decoration: none;
-    padding: 0.875em 1em;
+    padding: 14px 16px;
 }
 
 nav li a:hover{
@@ -224,21 +229,20 @@ article p{
 #pie { clear: both; }
 
 footer{
-    width: 100%;
+    width: 960px;
     height: 60px;
-    color: black;
-    background-color: #56A7A7;
+    color: #000000;
     text-align: left;
     font-size: 14pt;
+    background-color: #56A7A7;
+    margin-bottom: 30px;
 }
 
-footer img{
-    padding: 0.25em;
-}
+
 
 #social{
     width: 960px;
-    margin:5px;
+    margin:10px;
 }
 
 #social ul{
@@ -253,9 +257,9 @@ footer img{
 
 #derechos{
     float: left;
-    width: 90%;
-    margin: 0 1em 0 10px;
-    padding: 0 1em 0 0;
+    width: 960px;
+    margin: 0 30px 0 10px;
+    padding: 0 30px 0 0;
     font-size: 100%;
     background-color: #56A7A7
 }
