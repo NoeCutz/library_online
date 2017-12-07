@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Pago</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" title="style" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilos.css" title="style"/>
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
     <script type="application/javascript" src="js/eventos.js"></script>
+
 </head>
 <body>
 
-<div id="contenedor">
+<div class="defaultbody" id="contenedor">
     <header>
         <div id="logotipo">
             <a href="index.html">
@@ -38,14 +41,15 @@
     <!-- Fin de header -->
 
     <section id="content_pago">
-        <form id="form-pago">
+        <form id="form-pago" method="POST" action="index.html" onsubmit="pagar();">
         <div id="pago-contenido">
             <div id="direccion-envio" align="left">
 
                     <table id="info-envio">
-                        <tr><td>Address:</td><td><input type="text" id="addr-pago"></td></tr>
-                        <tr><td>P.C.</td><td><input type="text" id="postc-pago"></td></tr>
-                        <tr><td>Country: </td><td><select name="country" value="MEX" id="pais-pago" form="form-pago">
+                        <tr><td>Address:</td><td><input type="text" id="addr-pago-ln1" class="addr-pago" required="required" placeholder="123 Sesame Street "></td></tr>
+                        <tr><td></td><td><input type="text" id="addr-pago-ln2" class="addr-pago"></td></tr>
+                        <tr><td>P.C.</td><td><input placeholder="97000" type="text" id="postc-pago" required="required" pattern="\d{5}"></td></tr>
+                        <tr><td>Country: </td><td><select name="country" value="MEX" id="pais-pago" form="form-pago" onchange="checkStates();" required="required">
                             <option value="AFG">Afghanistan</option>
                             <option value="ALA">Åland Islands</option>
                             <option value="ALB">Albania</option>
@@ -298,7 +302,7 @@
                         </select></td></tr>
                         <tr><td>State:</td>
                             <td>
-                                <select name="state" value="Yucatan" id="estado-pago" form="form-pago"f>
+                                <select name="state" value="Yucatan" id="estado-pago" form="form-pago">
                             <option value="1">Aguascalientes</option>
                             <option value="2">Baja California</option>
                             <option value="3">Baja California Sur</option>
@@ -335,8 +339,8 @@
                     </table>
 
             </div>
-            <div id="formas-de-envio">
-                <table>
+            <div id="formas-de-envio" onchange="loadPayment();">
+                <table >
                     <tr>
                     <td><input type="radio" name="forma-envio" value="10" ></td><td>DHL Xpress - $10</td>
                     </tr>
@@ -353,13 +357,22 @@
             <div id="cobro-contenido">
                 <div id="pago-cobro" align="left">
 
+                    <h1>Billing</h1>
+                    <label>Credit card numbrer:</label>
+                    <p><input placeholder="4444333322221111" id="tarjeta" required="required" type="number" maxlength="20" min="0" pattern="(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})"></p>
+                    <label>Name:</label>
+                    <p><input type="text" required="required" placeholder="Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y Picasso"></p>
+
+
                     <label >Credit card numbrer:</label>
                     <p><input type="number" maxlength="16"></p>
                     <label>Credit card numbrer:</label>
                     <p><input type="number" maxlength="16"></p>
                 <div class="form-group" id="expiration-date">
                 <label>Expiration Date</label>
-                <select>
+
+                <p><select required="required">
+
                     <option value="01">Enero</option>
                     <option value="02">Febrero </option>
                     <option value="03">Marzo</option>
@@ -373,7 +386,7 @@
                     <option value="11">Noviembre</option>
                     <option value="12">Diciembre</option>
                 </select>
-                <select>
+                <select required="required">
                     <option value="17"> 2017</option>
                     <option value="18"> 2018</option>
                     <option value="19"> 2019</option>
@@ -381,8 +394,25 @@
                     <option value="21"> 2021</option>
                     <option value="22"> 2022</option>
                     <option value="23"> 2023</option>
-                </select>
-            </div>
+                </select></p>
+                    <label>Security numbrer:</label>
+                    <p><input type="number" placeholder="123" maxlength="5" min="0" pattern="\d{3,5}" ></p>
+                </div>
+                </div>
+                <div id="total-cobro" >
+                    <table id="total-calc">
+                        <tr><td>Quantity</td><td id="cantidad-prods" align="right">1</td></tr>
+                        <tr><td colspan="2">&nbsp;</td></tr>
+                        <tr><td>Cost</td><td id="costo-prods" align="right">$369.00</td></tr>
+                        <tr><td colspan="2">&nbsp;</td></tr>
+                        <tr><td>Shipment</td><td id="costo-envio" align="right">$100.00</td></tr>
+                        <tr><td colspan="2"></td></tr>
+                        <tr><td colspan="2" id="total-line" style="border-bottom: medium">&nbsp;</td></tr>
+                        <tr><td>TOTAL:</td><td id="total-prods" align="right">$469.00</td></tr>
+                        <tr><td colspan="2" style="border-bottom: medium">&nbsp;</td></tr>
+                    </table>
+                
+
 
 
                 </div>
@@ -390,7 +420,10 @@
 
                 </div>
         </div>
-            <input type="submit" id="comprar" value="Confirm">
+
+            <input type="submit" id="comprar" value="Confirm" align="center">
+
+
         </form>
 
     </section>
@@ -410,6 +443,9 @@
             </div>
 
         </footer >
+</div>
+<div class="alertingdivbg"  style="display: none">
+    <div class="alertingdiv"></div>
 </div>
 </body>
 </html>

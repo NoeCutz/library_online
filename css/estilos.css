@@ -1,9 +1,48 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing:border-box;
 }
 
+body{
+    background-color: #F9FBFC;
+}
 
+hr{
+    border-top: 1px solid;
+}
+
+.alertingdivbg{
+    position: fixed; !important;
+    width: 200%; height: 200%; !important;
+    padding-top: 20%;
+    background-color: rgba(0, 0, 0, 0.47);
+    padding-left: 45%;
+    top:0; right:0;
+    bottom:0; left:0;
+    font-family: 'Lato', sans-serif, bold ;
+}
+
+body .alertingdiv{
+    background-color: white;
+    padding-top: 2.5%;
+    width: 16%;
+    height: 18%;
+    border: 15px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+
+ }
+
+#contenedor .alertingdiv span {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    font-size: large;
+
+}
 header, nav, section, aside, footer{
     display: block;
 }
@@ -12,19 +51,14 @@ header, nav, section, aside, footer{
     clear:both;
 }
 
-body{
-    margin:30px auto 0;
+#contenedor{
+    width: 960px;
+    margin:0px 15% 0 15%;
     position:relative;
     text-align:left;
-    width:960px;
     padding-left: 20px;
     padding-right: 20px;
     font-family: 'Lato', sans-serif;
-}
-
-
-#contenedor{
-    width: 960px;
 }
 
 /*=====================================
@@ -34,7 +68,8 @@ body{
 header{
     width: 960px;
     height:100px;
-    color: #000000;
+    color: #F9FBFC;
+    background-color: #56A7A7;
 }
 
 #logotipo{
@@ -62,6 +97,8 @@ header{
 nav{
     font-size: 14pt;
     font-family: 'Lora', serif;
+    background-color: #A0DBDB;
+    width: 960px;
 }
 
 nav ul{
@@ -87,13 +124,13 @@ nav ul li{
     text-align: center;
 }
 
-li a{
-    color: #1e1d1c;
+nav ul li a{
+    color: #000000;
     text-decoration: none;
     padding: 14px 16px;
 }
 
-li a:hover{
+nav ul li a:hover{
     color:#7795a3;
 }
 
@@ -104,25 +141,22 @@ header #perfil{
      */
     float: right;
     top: 15px;
-    right: 40px;
     margin-top: 15px;
+
 }
 
-header #perfil #usuario img{
+header #perfil img{
     width: 20%;
 }
 
+header #perfil a{
+    cursor: pointer;
+}
 header #perfil #nombre_usuario{
-    color: #d71a26;
-    float: left;
-    display: inline-block;
+    color: #FCEA90;
     text-align: left;
-    padding: 1em;
 }
 
-header #perfil #carrito img{
-    width: 20%;
-}
 
 /*=====================================
 	Manejo del contenido
@@ -137,7 +171,7 @@ section #presentacion{
 section #ofertas{
     width: 930px;
     height: 150px;
-    border: 1px solid #993d00;
+    border: 3px solid #56A7A7;
     margin:20px;
     padding-bottom: 10px;
     text-align: center;
@@ -154,7 +188,7 @@ section #ofertas ul{
 }
 
 section #ofertas ul li{
-    width: 250px;
+    width: 300px;
     float: left;
     padding:0 0 0 5px;
 }
@@ -183,15 +217,44 @@ section #ofertas ul li{
 }
 
 
+#ofertas input[type=button]{
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/*
+#ofertas input[type=button]:hover{
+    border: 2px solid lightcoral;
+}*/
+
+#ofertas input[type=button]:focus{
+    outline: none;
+    border: 2px solid lightcoral;
+}
+
+
+
 #content_login{
     text-align: center;
     width: 960px;
 }
 
+#content_login a:visited{
+    color: cornflowerblue;
+}
+
 #form_login table{
     margin: 0 auto;
     padding: 0;
-    text-align: center;
+    height: 250px;
 }
 
 #form_login input, #form_signup input{
@@ -199,35 +262,49 @@ section #ofertas ul li{
     width: 200px;
     height: 30px;
     border-style:solid;
+    border-radius: 4px;
 
 }
+
+
 
 #form_login input:focus, #form_signup input:focus{
     border-color: cornflowerblue;
 }
 
-#button_login{
-    width: 10px;
-    height: 100px;
-    padding: 5px;
-    font-weight: bold;
+
+#button_login {
+    margin: 0;
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #008CBA;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 #button_signup{
-    width: 150px;
-    height: 100px;
-    font-weight: bold;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 #login_registrarse{
     padding-bottom: 5px;
     width: 100px;
+    height: 100px;
 }
 
 
 #login{
     width: 500px;
-    height: 300px;
+    height: 330px;
     margin:0 230px;
 }
 
@@ -242,6 +319,78 @@ section #ofertas ul li{
     margin:0 230px;
 }
 
+/*============Perfil===============*/
+
+
+#content_profile{
+    text-align: center;
+    width: 960px;
+}
+#content_prod{
+    text-align: center;
+    width: 960px;
+}
+
+#form_profile table{
+    margin: 0 auto;
+    padding: 0;
+    height: 400px;
+}
+
+#logout{
+    height: 45px;
+}
+
+
+#button_update{
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#button_update_password{
+    margin: 0;
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#4CAF50;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#button_logout{
+    float: right;
+    margin-right: 40px;
+    border: none;
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 14px 25px;
+    background-color:#f44336;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#validacion_update{
+    height: 30px;
+    color: red;
+}
+
+
+/*======Productos=============*/
 #prod-lateral { float: left; width: 17%; }
 
 
@@ -254,7 +403,7 @@ section #ofertas ul li{
 
 div.prod-stars {
     padding: 7px;
-    width: 270px;
+    width: 100%;
     display: inline-block;
     align-content: left;
 }
@@ -263,7 +412,7 @@ input.prod-star { display: none; }
 
 label.prod-star {
     align-content: right;
-    font-size: 40px;
+    font-size: 30px;
     color: #444;
     transition: all .2s;
 }
@@ -306,7 +455,9 @@ padding-left: 150px;
     font-weight: bold;
     font-family: "Verdana";
 }
-
+#content_pago{
+    width:960px;
+}
 #pago-contenido{
     padding: 10px;
     width:  100%;
@@ -343,7 +494,38 @@ padding-left: 150px;
     font-size: 30px;
     text-align: justify;
 }
-#pago-contenido select{
+
+#formas-de-envio input[type=radio]{
+
+    height: 30px;
+    border-style:solid;
+    border-radius: 4px;
+}
+
+#pago-cobro input[type=number]{
+    width: 80%;
+}
+
+#content_pago input{
+
+    height: 30px;
+    border-style:solid;
+    border-radius: 4px;
+}
+
+#total-calc{
+    width:  80%;
+}
+
+#total-line{
+    border-top: 1pt solid black;
+
+}
+#content_pago select{
+
+    height: 30px;
+    border-style:solid;
+    border-radius: 4px;
     max-width: 40%;
 }
 #pago-contenido #direccion-envio { float: left; width: 45%; }
@@ -367,15 +549,17 @@ padding-left: 150px;
 footer{
     width: 960px;
     height: 60px;
-    color: #1e1d1c;
+    color: #000000;
     text-align: left;
     font-size: 14pt;
+    background-color: #56A7A7;
+   margin-bottom: 30px;
 }
 
 
 #social{
     width: 960px;
-    margin:5px;
+    margin:10px;
 }
 
 #social ul{
@@ -394,3 +578,4 @@ footer{
     margin: 0 30px 0 10px;
     padding: 0 30px 0 0;
 }
+

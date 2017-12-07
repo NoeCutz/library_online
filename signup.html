@@ -5,11 +5,12 @@
     <title>Registro</title>
     <link rel="stylesheet" href="css/estilos.css" type="text/css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="application/javascript" src="js/eventos.js"></script>
 </head>
 <body>
 
-    <div id="contenedor">
+    <div id="contenedor" class="defaultbody">
         <header>
             <div id="logotipo">
                 <a href="index.html">
@@ -19,9 +20,9 @@
             </div>
 
             <div id="perfil">
-                <div id="nombre_usuario"></div>
-                <a href="login.html"><img id="usuario" src="images/user.png"></a>
+                <a><img id="usuario" src="images/user.png"></a>
                 <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
+                <div id="nombre_usuario"></div>
             </div>
         </header>
 
@@ -72,14 +73,14 @@
                         <td>
                             Correo electrónico:
                         </td>
-                        <td><input name="email" id="email" type="email" required="required"></td>
+                        <td><input name="email" id="email" type="email" required="required" placeholder="email@company.com"></td>
                     </tr>
 
                     <tr>
                         <td>
                             Telefono:
                         </td>
-                        <td><input name="telephone" id="telephone" type="tel" required="required" pattern="[0-9]{10}"></td>
+                        <td><input name="telephone" id="telephone" type="tel" required="required" pattern="[0-9]{10}" placeholder="0123456789"></td>
                     </tr>
 
                     <tr>
@@ -96,8 +97,9 @@
     </section>
 
         <!-- Footer -->
-        <hr>
+
     <footer>
+        <hr>
         <div id="social">
             <ul id="red_social">
                 <li><a href="#" title="facebook"><img src="images/facebook.png"></a></li>

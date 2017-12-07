@@ -6,6 +6,8 @@ var jsonUsers = {};
 
 jsonUsers.users = [];
 
+var total = 0;
+
 function User(user, password, name, email, telephone, login) {
     this.user = user;
     this.password = password;
@@ -22,22 +24,63 @@ window.onload = function () {
     eventProfile();
     init();
 
-    var table_shopping = document.getElementById("shopping_cart");
+    $("#menu_button").click(function () {
+        menu_class = $("nav ul").attr("class");
 
+
+        if(menu_class != undefined){
+            if(menu_class.indexOf("visible")>-1){
+                $("nav ul").removeClass("visible");
+            }else{
+
+                $("nav ul").addClass("visible");
+            }
+        }else{
+            $("nav ul").addClass("visible");
+        }
+    });
+
+
+    var table_shopping = document.getElementById("shopping_cart");
+    var pagos = document.getElementById("content_pago");
     if(table_shopping !=  undefined){
         loadCart()
     }
 
+    if(pagos !== undefined && pagos !== null){
+        loadPayment();
+    }
     function eventProfile() {
         var perfil = document.getElementById("usuario");
         perfil.onclick = function () {
             if (sessionStorage.username) {
-                logout();
+                location.href = "profile.html";
             } else {
-                location.href = "login.html"
+                location.href = "login.html";
             }
 
         }
+    }
+
+    var content_profile = document.getElementById("content_profile");
+    if(content_profile != undefined){
+        showDataUser();
+
+
+        $("#button_logout").click(function () {
+            logout();
+        });
+
+        $("#button_update_password").click(function () {
+            $("#new_password").show();
+            $("#new_password_repeat").show();
+            $(this).val("Actualizar");
+        });
+
+        $("#new_password").hide();
+        $("#new_password_repeat").hide();
+
+
     }
 
     function init() {
@@ -71,6 +114,11 @@ window.onload = function () {
         }
         showTotal(numItems);
     }
+
+
+
+
+
 
     function addElementsToBody(element) {
         var inserElementCode = "<tr><td>" +element[0]+"</td>";
@@ -125,16 +173,8 @@ function login(form){
 }
 
 function logout() {
-    var answer = confirm("¿Desea cerrar su sesión?");
-
-
-    if(answer){
         sessionStorage.removeItem("username");
-        alert("Tu sesion se ha cerrado");
         location.href = "login.html"
-    }
-
-
 }
 
 
@@ -168,6 +208,41 @@ function signup(form) {
     saveUser(form);
     return true;
 
+}
+
+
+function updatePassword(form) {
+    var contrasena = form["password_profile"].value;
+    var contrasena_repeat = form["password_repeat_profile"].value;
+    var user = form["user_profile"].value;
+
+    var content_valid = document.getElementById("validacion_update");
+
+    if(contrasena != contrasena_repeat){
+        contrasena.value = "";
+        contrasena_repeat.value = "";
+        content_valid.innerHTML = "Contraseñas no coinciden";
+        return false;
+    }
+
+    var userUpdate;
+    var indexUser;
+
+    for (i=0; i<jsonUsers.users.length;i++){
+        if( jsonUsers.users[i].user == user ){
+            userUpdate= jsonUsers.users[i];
+            indexUser = i;
+        }
+
+    }
+
+    userUpdate.password = contrasena;
+
+   console.log("userUpdate", userUpdate);
+
+    jsonUsers.users.splice(indexUser,1,userUpdate);
+
+    localStorage.setItem("users", JSON.stringify(jsonUsers));
 }
 
 
@@ -208,6 +283,24 @@ function existsTelephone(telephone) {
     return false;
 }
 
+
+function showDataUser() {
+    var user;
+
+    for (i=0; i<jsonUsers.users.length;i++){
+        if(jsonUsers.users[i].user == sessionStorage.username){
+            user = jsonUsers.users[i];
+        }
+    }
+    document.getElementById("user_profile").value = user.user;
+    document.getElementById("name_profile").value = user.name;
+    document.getElementById("email_profile").value = user.email;
+    document.getElementById("telephone_profile").value = user.telephone;
+
+
+}
+
+
 //Shopping list
 
 
@@ -216,6 +309,7 @@ function deleteElement(button) {
     sessionStorage.removeItem(row.cells[0].innerHTML);
     location.reload();
 }
+
 
 function emptyCart() {
     sessionStorage.clear();
@@ -230,6 +324,8 @@ function addToCart_P() {
     var name = document.getElementById("titulo").innerHTML;
     var price=document.getElementById("prod-precio").innerHTML;
     addToCart(name,price);
+    showAlertDiv(name,price);
+    
 }
 function addToCart_I(item) {
     var node= item.parentNode;
@@ -273,4 +369,76 @@ function initMap() {
 
         google.maps.event.addListener(marker, 'click', (popup)(marker,i));
     }
+}
+
+//End geolocation
+
+    showAlertDiv(name,price);
+
+}
+
+function checkStates() {
+    var pais = $("#pais-pago").val();
+    if(pais !== "MEX"){
+        $("#estado-pago").prop('disabled', true);
+    }else{
+        $("#estado-pago").prop('disabled', false);
+
+    }
+}
+
+function loadPayment() {
+    var keys= Object.keys(sessionStorage);
+    var numItems = 0;
+    total=0;
+
+
+    for (var i=0; i<keys.length; i++){
+
+        if(keys[i] != "username") {
+            var element= JSON.parse(sessionStorage.getItem(keys[i]));
+            total += parseFloat(element[1]);
+            numItems++;
+        }
+
+    }
+
+    document.getElementById("cantidad-prods").innerHTML=numItems.toString();
+    total.toFixed(2);
+    document.getElementById("costo-prods").innerHTML="$ " +  total.toFixed(2).toString();
+
+
+    var radios = document.getElementsByName('forma-envio');
+
+    for (var i = 0, length = radios.length; i < length; i++)
+    {
+        if (radios[i].checked)
+        {
+           var  envio = parseFloat(radios[i].value);
+            document.getElementById("costo-envio").innerHTML="$ "+ envio.toFixed(2);
+            total += parseFloat(envio);
+            break;
+        }
+    }
+
+
+
+    document.getElementById("total-prods").innerHTML="$ " +  total.toFixed(2).toString();
+}
+
+function showAlertDiv(name, price) {
+    $(".alertingdivbg").show();
+    $(".alertingdiv")[0].innerHTML = "<span>Se a&ntildeadio: <br><b> " +name + "</b> por  <b>$" + price + " </b><br> al carrito</span>"
+    setTimeout(function () {
+        $(".alertingdivbg").hide();
+    },1000)
+}
+function pagar() {
+    var tarjeta = $("#tarjeta").val();
+        $(".alertingdivbg").show();
+        $(".alertingdiv")[0].innerHTML = "<span>Se cobraron: <br><b> $" + total.toFixed(2) + "</b> en la tarjeta <br> <b>" + tarjeta + " </b> </span>"
+        setTimeout(function () {
+            $(".alertingdivbg").hide();
+        },4000)
+    emptyCart();
 }
