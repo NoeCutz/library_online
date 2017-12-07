@@ -104,10 +104,7 @@ window.onload = function () {
     function loadCart() {
         var keys= Object.keys(sessionStorage);
         var numItems = 0;
-
-
         for (var i=0; i<keys.length; i++){
-
             if(keys[i] != "username") {
                 var element= JSON.parse(sessionStorage.getItem(keys[i]));
                 addElementsToBody(element);
@@ -141,6 +138,7 @@ window.onload = function () {
         document.getElementById("cost_total").innerHTML=total.toString();
     }
 
+    initMap();
 };
 
 
@@ -334,6 +332,47 @@ function addToCart_I(item) {
     var name= node.getElementsByClassName("bookName")[0].innerHTML;
     var price = node.getElementsByClassName("bookPrice")[0].innerHTML;
     addToCart(name,price);
+}
+
+//Geolocation
+
+function initMap() {
+    var i, infowindow, locations, map, marker;
+
+    locations=[
+        ['Sucursal A', 21.047103, -89.644928,100],
+        ['Sucursal B',20.997920, -89.621493,100],
+        ['Sucursal C',21.025735, -89.594768,100]
+    ];
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11, center: new google.maps.LatLng(20.966930, -89.623733),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    infowindow = new google.maps.InfoWindow({map:map});
+
+    var popup = function(marker, i) {
+        return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+        };
+    };
+
+    marker = void 0;
+    i = 0;
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            zIndex:locations[i][3], map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (popup)(marker,i));
+    }
+}
+
+//End geolocation
+
     showAlertDiv(name,price);
 
 }

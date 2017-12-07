@@ -356,15 +356,23 @@
         </div>
             <div id="cobro-contenido">
                 <div id="pago-cobro" align="left">
+
                     <h1>Billing</h1>
                     <label>Credit card numbrer:</label>
                     <p><input placeholder="4444333322221111" id="tarjeta" required="required" type="number" maxlength="20" min="0" pattern="(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})"></p>
                     <label>Name:</label>
                     <p><input type="text" required="required" placeholder="Pablo Diego José Francisco de Paula Juan Nepomuceno María de los Remedios Cipriano de la Santísima Trinidad Ruiz y Picasso"></p>
 
+
+                    <label >Credit card numbrer:</label>
+                    <p><input type="number" maxlength="16"></p>
+                    <label>Credit card numbrer:</label>
+                    <p><input type="number" maxlength="16"></p>
                 <div class="form-group" id="expiration-date">
                 <label>Expiration Date</label>
+
                 <p><select required="required">
+
                     <option value="01">Enero</option>
                     <option value="02">Febrero </option>
                     <option value="03">Marzo</option>
@@ -406,9 +414,15 @@
                 
 
 
+
+                </div>
+                <div id="total-cobro" align="right">
+
                 </div>
         </div>
+
             <input type="submit" id="comprar" value="Confirm" align="center">
+
 
         </form>
 

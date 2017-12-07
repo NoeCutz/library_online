@@ -5,7 +5,12 @@
     <title>Acerca de Flourish y Blotts</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/about.css">
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="application/javascript" src="js/eventos.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyB5puuExsQ2mls3EpNmkuHHJVOBQB59x1s"
+            type="text/javascript"></script>
 </head>
 <body>
     <header>
@@ -21,8 +26,8 @@
             <a href="login.html"><img id="usuario" src="images/user.png"></a>
             <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
         </div>
+        <a id="menu_button"></a>
     </header>
-
     <hr>
     <nav>
         <ul>
@@ -35,21 +40,27 @@
 
     <!-- Fin de header -->
 
+    <br>
     <section class="about">
-        <h1>Acerca de Flourish y Blotts</h1>
+        <h1>Sobre nosotros</h1>
         <article id="info">
-            <p><img src="images/logo.png">Flouris y Blotts se fundó en 2017 para brindar la más amplía variedad
-                de libros especializados en el país. Por el momento no contamos con tienda física pero sí con muchos
-                libros científicos ;)<br>
+            <p>Flouris y Blotts se fundó en 2017 para brindar la más amplia variedad
+                de libros especializados en el país. Nuestra especialidad son los libros científicos. Realiza las
+                solicitudes que gustes, si no encuentras lo que buscas: seguro lo tenemos para ti.<br>
                 ¡Todos los libros al mejor precio! <br>
                 <br>
+                Matriz: <br>
                 Calle 246-A #231 Col. Los Caballitos, C.P. 1240<br>
                 Ciudad de Los Gatos, México. <br>
 
                 ¿Dudas? <br>
-                (55)123-123-12 y (01 800) 123-1234 <br>
-                contact@flourishblotts.com
+                <a href="tel:+525512312312">(55)123-123-12</a> y <a href="tel:+52018001231234">(01 800) 123-1234</a><br>
+                <a href="mailto:contact@flourishblotts.com">contact@flourishblotts.com</a>
                 </p>
+        </article>
+        <article id="localization">
+            <h1>Encuentra tu librería mas cercana</h1>
+            <div id="map"></div>
         </article>
     </section>
 

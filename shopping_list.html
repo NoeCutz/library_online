@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrito de compras</title>
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/eventos.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/shop_list.css">
     <link href="https://fonts.googleapis.com/css?family=Lato|Lora|Spectral+SC:300" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
 
@@ -22,8 +25,8 @@
             <a href="login.html"><img id="usuario" src="images/user.png"></a>
             <a href="shopping_list.html"><img id="carrito" src="images/shopping-cart.png"></a>
         </div>
+        <a id="menu_button"></a>
     </header>
-
     <hr>
     <nav>
         <ul>
@@ -36,7 +39,7 @@
 
     <!-- Fin de header -->
 
-    <div id="contenedor">
+    <div id="contenido">
         <h1>Carrito de compras</h1>
         <form method="post">
             <table class="shopping_cart" id="shopping_cart">
@@ -58,7 +61,6 @@
             </li>
             <li>
                 <a href="pago.html" class="btn"><input type="button" class="btn" value="Pagar"></a>
-
             </li>
             <li>
                 <a href="index.html" class="btn">Seguir navegando</a>
@@ -80,6 +82,6 @@
         <div id="derechos">
             <small>&copy;2017 Librería Flourish y Blotts. Todos los derechos reservados.</small>
         </div>
-    </footer>
+    </footer >
 </body>
 </html>

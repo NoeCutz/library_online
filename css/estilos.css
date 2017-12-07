@@ -83,6 +83,8 @@ header{
     width: 8%;
 }
 
+
+
 #logotipo span{
     margin: 40px 0 0 10px;
     float: left;
@@ -464,8 +466,9 @@ padding-left: 150px;
 #prod-precio{
     color: red;
 }
-.addr-pago{
-    width:100%;
+#addr-pago{
+    width: 100%;
+    line-height: 4;
     text-align: start;
 }
 
@@ -484,8 +487,6 @@ padding-left: 150px;
 
     color: white;
     padding: 0px 25px 0px 25px;
-    margin: 5%;
-    align: center;
 }
 
 #formas-de-envio{
@@ -537,9 +538,6 @@ padding-left: 150px;
 }
 
 #cobro-contenido #pago-cobro { float: left; width: 45%; }
-#cobro-contenido #pago-cobro input[type=text]{
-    width: 80%;
-}
 #cobro-contenido #total-cobro { float: right; width: 35%; }
 
 

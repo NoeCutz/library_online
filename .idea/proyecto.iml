@@ -14,8 +14,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-
-    <orderEntry type="library" name="markerclusterer" level="application" />
-
   </component>
 </module>
